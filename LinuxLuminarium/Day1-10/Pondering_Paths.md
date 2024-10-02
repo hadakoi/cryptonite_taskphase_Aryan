@@ -8,7 +8,7 @@ In this challenge its asking us to enter a directory called pwn which automatica
 This allows us to access the pwn directory contained in the root directory
 
 ```
-
+![image](https://github.com/user-attachments/assets/4d5fcc1d-d6de-4297-9b23-4e881782d899)
 
 ## Program and absolute paths
 
@@ -19,6 +19,9 @@ In this challenge we are entering a directory challenge that is located in the r
 we just execute */challenge/run* and we get back the flag
 
 ```
+
+![image](https://github.com/user-attachments/assets/efee2f36-d5c4-4421-a9ae-45b4dcb4058e)
+
 
 ## Position thy self
 
@@ -40,6 +43,9 @@ which switches us to the fontconfig directory hence we rerun
 and have recieved our key
 
 ```
+
+![image](https://github.com/user-attachments/assets/c9083793-d2ae-457d-93c7-e645d6f1de16)
+
 
 ## Position yet Elsewhere
 
