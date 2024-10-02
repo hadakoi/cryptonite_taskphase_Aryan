@@ -1,0 +1,7 @@
+# Pondering Paths
+
+## Short notes
+
+```
+
+```
