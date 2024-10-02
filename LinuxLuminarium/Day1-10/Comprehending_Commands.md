@@ -51,5 +51,25 @@ This returns our flag.
 
 ## listing files
 ```
+In this challenge we are going to use ls to list our the files for a certain directory. by using the command *ls /directoryName*
+This command would list out the files / programmes in directoryName. In this case we have to ls /challenge
+This gives us 2 file options which is a description.md and a executable programme with a random name.
+Now to execute the programme we do /challenge/filename
+This returns the key.
 ```
+![image](https://github.com/user-attachments/assets/3ec3d545-2a86-4235-b311-d55603884264)
+
+## touching files
+```
+In this challenge we are going to create 2 files in the /tmp directory.
+we can do this using a command when inside the /tmp directory which is touch filename.
+in this case we do touch pwn and touch college
+once these 2 files are created
+we reference the /challenge/run programme
+
+This returns the key.
+```
+![image](https://github.com/user-attachments/assets/7512bc44-cc3c-423a-a822-65cb027ee174)
+
+
 
