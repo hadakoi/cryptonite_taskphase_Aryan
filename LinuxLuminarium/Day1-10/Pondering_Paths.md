@@ -8,6 +8,8 @@ In this challenge we are tasked with invoking a program located in the root dire
 This is done by executing */pwn* where the / signifies that it is in the root directory and pwn is the executable program.
 By running this commands we execute the pwn program which returns the flag.
 
+Flag -> AhtgÏ2aIJwYv7p_Ye1_1EmmQz6c.dhzN5QDL4czN0czw
+
 ```
 ![image](https://github.com/user-attachments/assets/4d5fcc1d-d6de-4297-9b23-4e881782d899)
 
@@ -21,6 +23,8 @@ When invoked this program will automatically return the flag.
 
 To execute the program we need to use its absolute path: /challenge/run.
 It runs the executable file present in the challenge directory and hence returns the flag.
+
+Flag -> wjv0fqhMGmPgZNJpA1vBE8UoeYq.dVDN1QDL4czN0czW
 
 ```
 
@@ -40,6 +44,8 @@ a different directory called /usr/share/doc/fontconfig
 to do that we must use this specific command *cd /usr/share/doc/fontconfig* which allows us to enter the specific directory which is fontconfig
 once we have entred this specific directory we may finally run the programme contained in challenge using /challenge/run
 
+Flag -> 4CHtiNCVcDoa6Fzx88MSZegt8cN.dZDN1QDL4czN☺czW-
+
 ```
 
 ![image](https://github.com/user-attachments/assets/c9083793-d2ae-457d-93c7-e645d6f1de16)
@@ -54,6 +60,8 @@ We encounter a prompt instructing us to change to a specific directory in this c
 to do that we use this command *cd /usr/bin* putting us in the bin directory afterwards we put the command to run the programme /challenge/run
 Hence the key is returned to us.
 
+Flag -> gvuIVp5frExfcmXOLIM064DL6la.ddDN1QDL4czN0czW;
+
 ```
 
 ![image](https://github.com/user-attachments/assets/35b1d138-5bd8-4da0-aacc-561a5bc3796b)
@@ -66,6 +74,8 @@ We encounter a prompt instructing us to change to a specific directory in this c
 
 to do that we use this command *cd /var* putting us in the bin directory afterwards we put the command to run the programme /challenge/run
 Hence the key is returned to us.
+
+Flag -> IB-f4M_2InLhgHsdjqb0fAwM9db.dhDN1QDL4czN0czWj
 
 ```
 ![image](https://github.com/user-attachments/assets/32332af0-11fa-4974-bd4d-c1251a35d95d)
@@ -91,6 +101,8 @@ You invoked this challenge with an absolute path. This challenge needs a relativ
 As an absolute path always begins with / as its referenced from the start of the root directory we need
 to use a relative path from the current directory we have switched to which is *challenge/run*
 hence we get our flag.
+
+Flag -> YVki8xoWpHfQOV7KгZI0P0mLN85.dlDN1QDL4czN0czW
 
 ```
 ![image](https://github.com/user-attachments/assets/16476613-0866-4c83-aaae-995f8092c2e7)
@@ -124,6 +136,8 @@ As such to solve it we use the command *./challenge/run*
 this and the previous command ideally do the same thing but they reference the file differently.
 this returns the flag.
 
+Flag -> 8QuhNryEq9ycQKrjhL_QheiuC4u.dBTN1QDL4czN0czW
+
 ```
 
 ![image](https://github.com/user-attachments/assets/bdae5bb8-0e4e-4982-b7dd-8eb7784f06c8)
@@ -142,6 +156,8 @@ We then run the programme using *./run*
 By using ./ we make it clear that the shell should look for run in /challenge
 
 this returns the flag
+
+Flag -> kzLeDdJZQCIaHA59NnVwkfIVx4f.dFTN1QDL4czN0czW
 
 ```
 ![image](https://github.com/user-attachments/assets/42a88925-5e7a-4911-8542-5c97e85d7aab)
@@ -162,6 +178,8 @@ In simple words ->
 Command: /challenge/run (This is the main action: "Run the challenge!")
 Argument: ~/x (This tells the computer where to put the result, in a file called x in your home folder)
 it gets expanded to /home/hacker/x. So the argument is essentially telling the command where to store the result.
+
+Flag -> EM4F1PXVV5X2MHsBf5VpnCPNbs8.dNzM4QDL4czNcZW
 
 ```
 ![image](https://github.com/user-attachments/assets/f1e8c511-6000-4d9a-b65a-7982d1fc0700)
