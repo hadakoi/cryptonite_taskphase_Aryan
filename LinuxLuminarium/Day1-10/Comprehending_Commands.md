@@ -8,6 +8,8 @@ In this challenge we are asked to read a file directly using cat. The flag is st
 Hence we use the command *cat flag*
 This returns the flag.
 
+Flag -> 854TpKiLLVYslvWrHZK7i0FXthF.dFzN1QDL4czNOCZW
+
 (p.s i will still pet tha cat)
 ```
 
@@ -19,6 +21,8 @@ As it is asking us to use an absolute path when referencing the flag file we mus
 using it as an absolute path means we are searching for the file flag from the / directory which is root.
 
 This returns the flag.
+
+Flag -> 09S57AQLuUvJDJ0uxzJxleeW9Nz.dlTM5QDL4czNOCZW
 
 (p.s if we had absolute paths irl for petting cats does that mean we can pet cats from anywhere..... hmmm)
 ```
@@ -32,7 +36,9 @@ However there is no directory or path we can possibly consider. hence we first d
 To which we are given where the user has actually hidden the flag file. This prompt is given by
 you MUST chase pass 'cat' the absolute path of where I put it on the filesystem (which is /opt/pwndbg/tests/flag).
 
-hence we do the command *cat /opt/pwndbg/tests/flag* which gives an absolute path to flag
+hence we do the command *cat /opt/pwndbg/tests/flag* which gives an absolute path to flag.
+
+Flag -> U5A09mAMuBzIWCEMгnLOEAWHW2Y.dBjM5QDL4czN0czw
 
 (p.s this level shoulda been called more petting practice)
 ```
@@ -46,6 +52,7 @@ Use the grep command which has the syntax *grep "stringtosearch" path* in this c
 part string of each flag hence our command is *grep "pwn.college" /challenge/data.txt*
 
 This returns our flag.
+Flag -> EOR7-Bq_03RSTLyaJN4KiceHZ1c.ddTM4QDL4czN0czw
 ```
 ![image](https://github.com/user-attachments/assets/41d54ebe-53ff-4efc-8ffb-6ca2bd2a1dac)
 
@@ -56,6 +63,8 @@ This command would list out the files / programmes in directoryName. In this cas
 This gives us 2 file options which is a description.md and a executable programme with a random name.
 Now to execute the programme we do /challenge/filename
 This returns the key.
+
+Flag -> E20fWuuXfjcxYIECWMLd55oK0zg.dhjM4QDL4czN0czw
 ```
 ![image](https://github.com/user-attachments/assets/3ec3d545-2a86-4235-b311-d55603884264)
 
@@ -68,6 +77,7 @@ once these 2 files are created
 we reference the /challenge/run programme
 
 This returns the key.
+Flag -> sxgoz1S6ca__b_TC1dDsDizXtMS.dBzM4QDL4czN0czW
 ```
 ![image](https://github.com/user-attachments/assets/7512bc44-cc3c-423a-a822-65cb027ee174)
 
