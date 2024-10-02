@@ -8,7 +8,7 @@ In this challenge we are tasked with invoking a program located in the root dire
 This is done by executing */pwn* where the / signifies that it is in the root directory and pwn is the executable program.
 By running this commands we execute the pwn program which returns the flag.
 
-Flag -> AhtgÏ2aIJwYv7p_Ye1_1EmmQz6c.dhzN5QDL4czN0czw
+Flag -> AhtgI2aIJwYv7p_Ye1_1EmmQz6c.dhzN5QDL4czN0czw
 
 ```
 ![image](https://github.com/user-attachments/assets/4d5fcc1d-d6de-4297-9b23-4e881782d899)
@@ -44,7 +44,7 @@ a different directory called /usr/share/doc/fontconfig
 to do that we must use this specific command *cd /usr/share/doc/fontconfig* which allows us to enter the specific directory which is fontconfig
 once we have entred this specific directory we may finally run the programme contained in challenge using /challenge/run
 
-Flag -> 4CHtiNCVcDoa6Fzx88MSZegt8cN.dZDN1QDL4czN☺czW-
+Flag -> 4CHtiNCVcDoa6Fzx88MSZegt8cN.dZDN1QDL4czN0czW
 
 ```
 
@@ -60,7 +60,7 @@ We encounter a prompt instructing us to change to a specific directory in this c
 to do that we use this command *cd /usr/bin* putting us in the bin directory afterwards we put the command to run the programme /challenge/run
 Hence the key is returned to us.
 
-Flag -> gvuIVp5frExfcmXOLIM064DL6la.ddDN1QDL4czN0czW;
+Flag -> gvuIVp5frExfcmXOLIM064DL6la.ddDN1QDL4czN0czW
 
 ```
 
