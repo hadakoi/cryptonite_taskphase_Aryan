@@ -158,6 +158,11 @@ Thus we use the command */challenge/run ~/x*
 meaning /challenge/run to write the output (in this case, the flag) to the file x located in your home directory (/home/hacker/x)
 This automatically returns the flag.
 
+In simple words ->
+Command: /challenge/run (This is the main action: "Run the challenge!")
+Argument: ~/x (This tells the computer where to put the result, in a file called x in your home folder)
+it gets expanded to /home/hacker/x. So the argument is essentially telling the command where to store the result.
+
 ```
 ![image](https://github.com/user-attachments/assets/f1e8c511-6000-4d9a-b65a-7982d1fc0700)
 
