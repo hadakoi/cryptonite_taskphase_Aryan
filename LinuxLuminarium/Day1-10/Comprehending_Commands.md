@@ -25,18 +25,33 @@ cat flag
 
 ---
 
+---
+
 ## catting absolute paths
+
+### Description
+As it is asking us to use an absolute path when referencing the flag file we must use `cat /flag`.
+Before we used the relative path (relative path means looking in the current directory). 
+Using it as an absolute path means we are searching for the file `flag` from the `/` directory which is the root.
+
+### Info / Stuff We Should Know
+- Absolute paths start from the root directory (`/`), while relative paths depend on the current working directory.
+- In this challenge, we need to reference the flag file using its absolute path.
+
+### Step-by-Step Solution
+
+**Read the flag file using an absolute path**
+```bash
+cat /flag
 ```
-As it is asking us to use an absolute path when referencing the flag file we must do cat /flag. Before we use the relative path ( relative path means looking in current directory )
-using it as an absolute path means we are searching for the file flag from the / directory which is root.
 
-This returns the flag.
+### Flag
+> **Flag:** `09S57AQLuUvJDJ0uxzJxleeW9Nz.dlTM5QDL4czNOCZW`
 
-Flag -> 09S57AQLuUvJDJ0uxzJxleeW9Nz.dlTM5QDL4czNOCZW
-
-(p.s if we had absolute paths irl for petting cats does that mean we can pet cats from anywhere..... hmmm)
-```
+**(p.s. If we had absolute paths in real life for petting cats, does that mean we can pet cats from anywhere? ... hmmm)**
 ![image](https://github.com/user-attachments/assets/cddb3aba-bfeb-4a76-9e9d-57f3997fe14a)
+
+---
 
 ## more catting practice
 ```
