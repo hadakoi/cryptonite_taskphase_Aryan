@@ -19,7 +19,7 @@ cat flag
 ```
 
 ### Flag
-> **Flag:** `854TpKiLLVYslvWrHZK7i0FXthF.dFzN1QDL4czNOCZW`
+>  `854TpKiLLVYslvWrHZK7i0FXthF.dFzN1QDL4czNOCZW`
 
 **(p.s i will still pet tha cat)**
 
@@ -46,7 +46,7 @@ cat /flag
 ```
 
 ### Flag
-> **Flag:** `09S57AQLuUvJDJ0uxzJxleeW9Nz.dlTM5QDL4czNOCZW`
+>  `09S57AQLuUvJDJ0uxzJxleeW9Nz.dlTM5QDL4czNOCZW`
 
 **(p.s. If we had absolute paths in real life for petting cats, does that mean we can pet cats from anywhere? ... hmmm)**
 ![image](https://github.com/user-attachments/assets/cddb3aba-bfeb-4a76-9e9d-57f3997fe14a)
@@ -77,7 +77,7 @@ This prompt states You MUST chase past cat the absolute path of where I put it o
 cat /opt/pwndbg/tests/flag
 ```
 ### Flag
-> **Flag:** `U5A09mAMuBzIWCEMгnLOEAWHW2Y.dBjM5QDL4czN0czw`
+>  `U5A09mAMuBzIWCEMгnLOEAWHW2Y.dBjM5QDL4czN0czw`
 
 **(p.s This level should have been called more petting practice)**
 ![image](https://github.com/user-attachments/assets/9a1e1e0e-1a37-4de9-bf5f-4e5de3f4b99f)
@@ -102,7 +102,7 @@ This returns our flag.
 grep "pwn.college" /challenge/data.txt
 ```
 ### Flag
-> **Flag:** `EOR7-Bq_03RSTLyaJN4KiceHZ1c.ddTM4QDL4czN0cz`
+>  `EOR7-Bq_03RSTLyaJN4KiceHZ1c.ddTM4QDL4czN0cz`
 
 ![image](https://github.com/user-attachments/assets/41d54ebe-53ff-4efc-8ffb-6ca2bd2a1dac)
 
@@ -132,7 +132,7 @@ ls /challenge
 /challenge/filename
 ```
 ### Flag
-> **Flag:** `E20fWuuXfjcxYIECWMLd55oK0zg.dhjM4QDL4czN0czw`
+>  `E20fWuuXfjcxYIECWMLd55oK0zg.dhjM4QDL4czN0czw`
 
 ![image](https://github.com/user-attachments/assets/3ec3d545-2a86-4235-b311-d55603884264)
 
@@ -166,7 +166,7 @@ touch college
 ```
 
 ### Flag
-> **Flag:** `sxgoz1S6ca__b_TC1dDsDizXtMS.dBzM4QDL4czN0czW`
+>  `sxgoz1S6ca__b_TC1dDsDizXtMS.dBzM4QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/7512bc44-cc3c-423a-a822-65cb027ee174)
 
@@ -196,7 +196,7 @@ rm delete_me
 /challenge/check
 ```
 ### Flag
-> **Flag:** `MTlreXe5peZraeMLLo1ZaDXK-JE.dZTOwUDL4czN0czW`
+>  `MTlreXe5peZraeMLLo1ZaDXK-JE.dZTOwUDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/94480784-b98c-4086-be1a-73b32417ac43)
 
@@ -227,7 +227,7 @@ ls -a
 cat /.filename
 ```
 ### Flag
-> **Flag:** `Uv0tAnVzY17bMckrtkbUO9MApSt.dBTN4QDL4czN0czW`
+>  `Uv0tAnVzY17bMckrtkbUO9MApSt.dBTN4QDL4czN0czW`
 
 
 ![image](https://github.com/user-attachments/assets/761896c7-5cd6-4949-b328-04cee1994ea6)
@@ -335,7 +335,7 @@ ls -a
 cat DISPATCH
 ```
 ### Flag
-> **Flag:** `c0oqKkRDMHxJNpPytbQ2sbvzELZ.dljM4QDL4czN0czW`
+>  `c0oqKkRDMHxJNpPytbQ2sbvzELZ.dljM4QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/7e806dc3-8f8d-4fc8-8b1b-347f3549406d)
 ![image](https://github.com/user-attachments/assets/3c33d51f-5723-42af-a31b-1c24b4995c4b)
@@ -377,7 +377,7 @@ touch college
 /challenge/run
 ```
 ### Flag
-> **Flag:** `c6g1unb6WJAnA5K1dRu8mbOhOV3.dFzM4QDL4czN0czW`
+>  `c6g1unb6WJAnA5K1dRu8mbOhOV3.dFzM4QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/35c36bd1-ef7a-456f-a711-1214405ed6f7)
 
@@ -410,7 +410,7 @@ cat /path/to/flag
 ```
 
 ### Flag
-> **Flag:** `kqzgDvgkOkoDhqupJmxJ8UKC2AV.dJzM4QDL4czN0czW`
+>  `kqzgDvgkOkoDhqupJmxJ8UKC2AV.dJzM4QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/cabb3d2a-9797-4c44-b5be-aee746d01615)
 
@@ -441,7 +441,7 @@ ln -s /flag /home/hacker/not-the-flag
 ```
 
 ### Flag
-> **Flag:** `4IjF5BNYn8Gq9tBlkFgPY3pxvE8.dlTM1UDL4czN0czW`
+>  `4IjF5BNYn8Gq9tBlkFgPY3pxvE8.dlTM1UDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/b736dad7-84b9-4d97-b882-77ce6742ebe6)
 
