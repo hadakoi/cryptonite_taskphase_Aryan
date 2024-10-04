@@ -1,5 +1,6 @@
 # Pondering Paths
 
+---
 ## The Root
 
 ### Description
@@ -22,6 +23,8 @@ The command requires specifying the absolute path to the executable located in t
 
 ![image](https://github.com/user-attachments/assets/4d5fcc1d-d6de-4297-9b23-4e881782d899)
 
+---
+
 ## Program and absolute paths
 
 ### Description
@@ -41,9 +44,9 @@ To execute the program we need to use its absolute path **/challenge/run**. It r
 ### Flag
 > **Flag:** `wjv0fqhMGmPgZNJpA1vBE8UoeYq.dVDN1QDL4czN0czW`
 
-
 ![image](https://github.com/user-attachments/assets/efee2f36-d5c4-4421-a9ae-45b4dcb4058e)
 
+---
 
 ## Position thy self
 
@@ -74,6 +77,7 @@ cd /usr/share/doc/fontconfig
 
 ![image](https://github.com/user-attachments/assets/c9083793-d2ae-457d-93c7-e645d6f1de16)
 
+---
 
 ## Position Elsewhere
 
@@ -99,8 +103,9 @@ cd /usr/bin
 ### Flag
 > **Flag:** `gvuIVp5frExfcmXOLIM064DL6la.ddDN1QDL4czN0czW`
 
-
 ![image](https://github.com/user-attachments/assets/35b1d138-5bd8-4da0-aacc-561a5bc3796b)
+
+---
 
 ## Position yet Elsewhere
 
@@ -127,6 +132,8 @@ cd /var
 
 ![image](https://github.com/user-attachments/assets/32332af0-11fa-4974-bd4d-c1251a35d95d)
 
+---
+
 ## implicit relative paths, from /
 
 ### Description
@@ -152,6 +159,8 @@ challenge/run
 > **Flag:** `YVki8xoWpHfQOV7KгZI0P0mLN85.dlDN1QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/16476613-0866-4c83-aaae-995f8092c2e7)
+
+---
 
 ## explicit relative paths, from /
 
@@ -184,6 +193,8 @@ cd /
 ![image](https://github.com/user-attachments/assets/bdae5bb8-0e4e-4982-b7dd-8eb7784f06c8)
 ![image](https://github.com/user-attachments/assets/ad778fae-6fbb-4d28-b2b4-1e2de2c2ab52)
 
+---
+
 ## implicit relative path
 
 ### Description
@@ -208,6 +219,8 @@ cd /challenge
 > **Flag:** `kzLeDdJZQCIaHA59NnVwkfIVx4f.dFTN1QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/42a88925-5e7a-4911-8542-5c97e85d7aab)
+
+---
 
 ## home sweet home
 
@@ -236,6 +249,8 @@ Argument: **~/x** (This tells the computer where to put the result in a file cal
 > **Flag:** `EM4F1PXVV5X2MHsBf5VpnCPNbs8.dNzM4QDL4czNcZW`
 
 ![image](https://github.com/user-attachments/assets/f1e8c511-6000-4d9a-b65a-7982d1fc0700)
+
+---
 
 
 
