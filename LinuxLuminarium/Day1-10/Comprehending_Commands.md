@@ -107,118 +107,278 @@ grep "pwn.college" /challenge/data.txt
 ![image](https://github.com/user-attachments/assets/41d54ebe-53ff-4efc-8ffb-6ca2bd2a1dac)
 
 ---
+## **Listing Files**
 
-## listing files
-```
-In this challenge we are going to use ls to list our the files for a certain directory. by using the command *ls /directoryName*
-This command would list out the files / programmes in directoryName. In this case we have to ls /challenge
-This gives us 2 file options which is a description.md and a executable programme with a random name.
-Now to execute the programme we do /challenge/filename
+### Description
+In this challenge we are going to use `ls` to list the files for a 
+certain directory by using the command `ls /directoryName`. 
+This command lists out the files and programs in `directoryName`. 
+In this case, we have to use `ls /challenge`. 
+This gives us two file options: a `description.md` and an executable program with a 
+random name. Now, to execute the program, we do `/challenge/filename`. 
 This returns the flag.
 
-Flag -> E20fWuuXfjcxYIECWMLd55oK0zg.dhjM4QDL4czN0czw
+### Info / Stuff We Should Know
+- Use `ls /directoryName` to list files in a specific directory.
+- You can execute a file by specifying its path.
+
+### Step-by-Step Solution
+
+**List the files and execute the program**
+```bash
+ls /challenge
 ```
+```bash
+/challenge/filename
+```
+### Flag
+> **Flag:** `E20fWuuXfjcxYIECWMLd55oK0zg.dhjM4QDL4czN0czw`
+
 ![image](https://github.com/user-attachments/assets/3ec3d545-2a86-4235-b311-d55603884264)
 
-## touching files
-```
-In this challenge we are going to create 2 files in the /tmp directory.
-we can do this using a command when inside the /tmp directory which is touch filename.
-in this case we do touch pwn and touch college
-once these 2 files are created
-we reference the /challenge/run programme
+---
 
-This returns the flag.
-Flag -> sxgoz1S6ca__b_TC1dDsDizXtMS.dBzM4QDL4czN0czW
+## Touching Files
+
+### Description
+In this challenge, we are going to create two files in the `/tmp` directory. We can do this using a command when inside the `/tmp` directory, which is `touch filename`. In this case, we do `touch pwn` and `touch college`. Once these two files are created, we reference the `/challenge/run` program. This returns the flag.
+
+### Info / Stuff We Should Know
+- Use `touch filename` to create an empty file.
+- You can create multiple files by running the `touch` command multiple times.
+
+### Step-by-Step Solution
+
+**switch to temp directory**
+```bash
+cd /tmp
 ```
+**Create the files in tmp directory**
+```bash
+touch pwn
+```
+```bash
+touch college
+```
+**run the program**
+```bash
+/challenge/run
+```
+
+### Flag
+> **Flag:** `sxgoz1S6ca__b_TC1dDsDizXtMS.dBzM4QDL4czN0czW`
+
 ![image](https://github.com/user-attachments/assets/7512bc44-cc3c-423a-a822-65cb027ee174)
 
-## removing files
-```
-In this challenge we are asked to remove the file "delete_me" using the rm command.
-This file is anyways in the home directory.
-So we run the command *rm delete_me*.
-Then we run the command /challenge/check which runs a programme to see if its not present.
-This returns the flag.
+---
 
-Flag -> MTlreXe5peZraeMLLo1ZaDXK-JE.dZTOwUDL4czN0czW
+## Removing Files
+
+### Description
+In this challenge, we are asked to remove the file `delete_me` using the `rm` command. This file is in the home directory. So we run the command `rm delete_me`. Then we run the command `/challenge/check` which runs a program to see if it is not present. This returns the flag.
+
+### Info / Stuff We Should Know
+- Use `rm filename` to remove a file.
+- Ensure that you are in the correct directory or specify the full path to the file.
+
+### Step-by-Step Solution
+
+**change directory to ~**
+```bash
+cd ~
 ```
+**Delete the delete_me file**
+```bash
+rm delete_me
+```
+**run the programme**
+```bash
+/challenge/check
+```
+### Flag
+> **Flag:** `MTlreXe5peZraeMLLo1ZaDXK-JE.dZTOwUDL4czN0czW`
+
 ![image](https://github.com/user-attachments/assets/94480784-b98c-4086-be1a-73b32417ac43)
 
-## hidden files
-```
-In this challenge we have to find a hidden file in the root directory. we switch to it simply by typing *cd /*
-We look for the file this by passing the command *ls -a* where -a is the argument for all.
-Once we have the name of the file. we can open / read it using cat /.filename
-This returns the flag.
+---
 
-Flag -> Uv0tAnVzY17bMckrtkbUO9MApSt.dBTN4QDL4czN0czW
+## **Hidden Files**
+
+### Description
+In this challenge, we have to find a hidden file in the root directory. We switch to it simply by typing `cd /`. We look for the file by passing the command `ls -a`, where `-a` is the argument for all. Once we have the name of the file, we can open or read it using `cat /.filename`. This returns the flag.
+
+### Info / Stuff We Should Know
+- Use `cd /` to navigate to the root directory.
+- Use `ls -a` to list all files, including hidden ones.
+- Use `cat` to read the contents of a file.
+
+### Step-by-Step Solution
+
+**Find and read the hidden file**
+```bash
+cd /
 ```
+**List all the files in root directory even the hidden ones**
+```bash
+ls -a
+```
+**Read the hidden file name**
+```bash
+cat /.filename
+```
+### Flag
+> **Flag:** `Uv0tAnVzY17bMckrtkbUO9MApSt.dBTN4QDL4czN0czW`
+
+
 ![image](https://github.com/user-attachments/assets/761896c7-5cd6-4949-b328-04cee1994ea6)
 
-## An epic filesystem quest 
+---
+## An epic filesystem quest
+
+### Description
+In this challenge we are asked to find a flag by following a path of breadcrumbs. 
+We start by entering the root directory with `cd /`. 
+After that we run `ls -a` where we see a file called GIST. 
+We then use the command `cat GIST`. 
+This tells us the file is located in the directory `/usr/share/icons/Adwaita/scalable-up-to-32/status`.
+
+However we do not know the file name in this directory that contains the key
+and entering the directory deletes the key.
+So we do a test run with `ls /usr/share/icons/Adwaita/scalable-up-to-32/status` which shows us the next hint is trapped in MESSAGE-TRAPPED. 
+
+Now that we know the path and where MESSAGE-TRAPPED is located
+we can do `cat /usr/share/icons/Adwaita/scalable-up-to-32/status/MESSAGE-TRAPPED`.
+This returns a hint saying we must change to a certain directory as the flag will 
+become readable only when inside it. 
+So we do `cd /usr/local/lib/python3.8/dist-packages/bleach/_vendor/html5lib/_trie`.
+
+Upon entering this directory and running `ls`,
+we see a file named INFO. We then do `cat INFO`,
+which has a similar situation to swapping to a directory before accessing the next clue.
+Hence we do `cd /usr/share/vim/vim81/lang/fi/LC_MESSAGES`.
+Here we use `ls` and see the file is called BRIEF.
+We `cat BRIEF` to receive another directory to go to and a hint that the file is hidden.
+
+Next, we do `cd /usr/share/javascript/mathjax/jax/output/SVG/fonts/Neo-Euler/Fraktur` 
+and then run `ls -a`, where we find the filename is .BLUEPRINT. 
+Hence we do `cat .BLUEPRINT` 
+which gives us another hint and like the second hint this one is trapped. 
+So we run the command `ls /usr/share/javascript/mathjax/jax/output/SVG/fonts/STIX-Web/Monospace`. This gives us the filename SPOILER-TRAPPED. The command `cat /usr/share/javascript/mathjax/jax/output/SVG/fonts/STIX-Web/Monospace/SPOILER-TRAPPED` tells us that the next clue is in the `/usr/share/systemd` directory. 
+
+Once we change the directory, we run `ls` to find the next filename of breadcrumbs, 
+which is LEAD. We do `cat LEAD`, which presents us with the next directory and mentions 
+that we need to use special viewing with `ls -a`. 
+So we do `cd /opt/linux/linux-5.4/tools/usb/ffs-aio-example/multibuff/device_app` 
+and then run `ls -a`. We see the filename is .EVIDENCE. Hence we do `cat .EVIDENCE`
+which informs us that the next clue is in `/usr/share/cmake-3.16/Help/prop_inst`.
+
+So we change to that directory with `cd /usr/share/cmake-3.16/Help/prop_inst`, 
+and after that we run `ls -a`, where we see the filename is DISPATCH. 
+We then `cat DISPATCH` to reveal the flag finally. (This reminded me of that one bandit level)
+
+### Info / Stuff We Should Know
+- Follow the hints provided in the files to find the flag.
+- Use `cd` to change directories and `cat` to read file contents.
+
+### Step-by-Step Solution
+
+**Navigate and find the flag. (P.S -> i am not writing what each one does.)**
+```bash
+cd /
+
+ls -a
+
+cat GIST
+
+ls /usr/share/icons/Adwaita/scalable-up-to-32/status
+
+cat /usr/share/icons/Adwaita/scalable-up-to-32/status/MESSAGE-TRAPPED
+
+cd /usr/local/lib/python3.8/dist-packages/bleach/_vendor/html5lib/_trie
+
+ls
+
+cat INFO
+
+cd /usr/share/vim/vim81/lang/fi/LC_MESSAGES
+
+ls
+
+cat BRIEF
+
+cd /usr/share/javascript/mathjax/jax/output/SVG/fonts/Neo-Euler/Fraktur
+
+ls -a
+
+cat .BLUEPRINT
+
+ls /usr/share/javascript/mathjax/jax/output/SVG/fonts/STIX-Web/Monospace
+
+cat /usr/share/javascript/mathjax/jax/output/SVG/fonts/STIX-Web/Monospace/SPOILER-TRAPPED
+
+cd /usr/share/systemd
+
+ls
+
+cat LEAD
+
+cd /opt/linux/linux-5.4/tools/usb/ffs-aio-example/multibuff/device_app
+
+ls -a
+
+cat .EVIDENCE
+
+cd /usr/share/cmake-3.16/Help/prop_inst
+
+ls -a
+
+cat DISPATCH
 ```
-In this challenge we are asked to find a flag by following a path of breadcrumbs.
-Entering the root directory with cd /.
-After that we ls -a where we see a file called GIST.
-We put the command cat GIST.
-This tells us the file is in the directory /usr/share/icons/Adwaita/scalable-up-to-32/status
+### Flag
+> **Flag:** `c0oqKkRDMHxJNpPytbQ2sbvzELZ.dljM4QDL4czN0czW`
 
-However we do not know what the file is called in this directory that contains the key and entering the directory
-deletes the key
-So we do a test run where we ls /usr/share/icons/Adwaita/scalable-up-to-32/status
-which shows us the next hint is trapped in MESSAGE-TRAPPED
-
-Now as we know the path and where MESSAGE-TRAPPED is we can simply do cat /usr/share/icons/Adwaita/scalable-up-to-32/status/MESSAGE-TRAPPED
-
-After this it returns a hint saying we must change to a certain directory as the flag will become readable only when inside it.
-so we do cd /usr/local/lib/python3.8/dist-packages/bleach/_vendor/html5lib/_trie
-
-Upon entering this file and doing ls we see a file name of INFO.
-We then cat this which has a similar situation to swapping to directory before accessing the next clue.
-Hence we do cd /usr/share/vim/vim81/lang/fi/LC_MESSAGES
-Over here we use ls and see the file is called BRIEF. we cat BRIEF.
-To which we get another directory to go to and a hint that the file is hidden.
-
-Hence we do cd /usr/share/javascript/mathjax/jax/output/SVG/fonts/Neo-Euler/Fraktur
-and then do ls -a
-To which we find the filename is .BLUEPRINT. Hence we cat .BLUEPRINT
-for which we get another hint and like the 2nd hint this one is trapped.
-so we do the command ls /usr/share/javascript/mathjax/jax/output/SVG/fonts/STIX-Web/Monospace
-This gives us the filename SPOILER-TRAPPED.
-cat /usr/share/javascript/mathjax/jax/output/SVG/fonts/STIX-Web/Monospace/SPOILER-TRAPPED. gives us a hint that its in the /usr/share/systemd directory hence we cd /usr/share/systemd
-
-once directory has changed we do ls to find the next filename of breadcrumbs
-This is LEAD so we do cat LEAD. This presents us with the next directory and the fact we need to use special viewing with ls -a
-so we do cd /opt/linux/linux-5.4/tools/usb/ffs-aio-example/multibuff/device_app
-then ls -a
-we see the file name is .EVIDENCE
-hence we do cat .EVIDENCE which tells us the next clue is in /usr/share/cmake-3.16/Help/prop_inst
-
-So we do cd /usr/share/cmake-3.16/Help/prop_inst
-after that we do ls -a to which we see the filename is DISPATCH
-we then cat DISPATCH to see the flag finally :D
-
-Flag -> c0oqKkRDMHxJNpPytbQ2sbvzELZ.dljM4QDL4czN0czW
-
-```
 ![image](https://github.com/user-attachments/assets/7e806dc3-8f8d-4fc8-8b1b-347f3549406d)
 ![image](https://github.com/user-attachments/assets/3c33d51f-5723-42af-a31b-1c24b4995c4b)
 
+---
+## **Making Directories**
 
-## Making Directories
+### Description
+In this challenge, we need to create a `/tmp/pwn` directory and make a file called `college` in it. Then we run `/challenge/run`.
+
+To do this, we first switch to the `tmp` directory by using `cd /tmp`. Once this is done, we use the command `mkdir pwn`, which creates a directory inside `/tmp`. Next, we switch to the `pwn` directory with `cd pwn`. After that, we use the command `touch college`, which creates a file called `college` inside the `/tmp/pwn` directory. Finally, we can directly run `/challenge/run`.
+
+This process returns the flag.
+
+### Info / Stuff We Should Know
+- Use `mkdir` to create a new directory.
+- Use `touch` to create an empty file.
+
+### Step-by-Step Solution
+
+**Change to tmp directory**
+```bash
+cd /tmp
 ```
-In this challenge we need to create a /tmp/pwn directory and make a college file in it. Then we run /challenge/run.
-
-To do this we first switch to the tmp directory by using cd /tmp. once this is done we use the command
-mkdir pwn which creates a directory inside /tmp. Then we switch to the pwn directory with cd pwn.
-After that we use the command touch college which creates a file called college inside the /tmp/pwn directory.
-Then we can directly run the /challenge/run
-
-This returns the flag.
-
-Flag -> c6g1unb6WJAnA5K1dRu8mbOhOV3.dFzM4QDL4czN0czW 
+**makes directory pwn**
+```bash
+mkdir pwn
 ```
+**moves into pwn directory**
+```bash
+cd pwn
+```
+**makes file college**
+```bash
+touch college
+```
+**runs the command to recieve the flag**
+```bash
+/challenge/run
+```
+### Flag
+> **Flag:** `c6g1unb6WJAnA5K1dRu8mbOhOV3.dFzM4QDL4czN0czW`
+
 ![image](https://github.com/user-attachments/assets/35c36bd1-ef7a-456f-a711-1214405ed6f7)
 
 ---
@@ -286,5 +446,4 @@ ln -s /flag /home/hacker/not-the-flag
 ![image](https://github.com/user-attachments/assets/b736dad7-84b9-4d97-b882-77ce6742ebe6)
 
 ---
-
 
