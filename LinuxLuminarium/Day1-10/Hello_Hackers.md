@@ -44,7 +44,7 @@ exit
 ```
 
 ### Flag
-> **Flag:** `Ava4qUHWtI8VnVXPu@jWQsZHUnF.ddjNyUDL4czN0czW`
+>  `Ava4qUHWtI8VnVXPu@jWQsZHUnF.ddjNyUDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/85b56ddb-0ed7-4c57-bb56-efc4b45c1f4e)
 ![image](https://github.com/user-attachments/assets/219853d3-33b4-42b8-a318-1b268e8af97e)
@@ -68,7 +68,7 @@ hello hackers
 ```
 
 ### Flag
-> **Flag:** `EW-My30cq4lfRUUP1qRau1ZTmuo.dhjNyUDL4czN0czWj`
+> `EW-My30cq4lfRUUP1qRau1ZTmuo.dhjNyUDL4czN0czWj`
 
 ![image](https://github.com/user-attachments/assets/60951bb6-0afb-4728-a5fb-0c8847e1c039)
 
