@@ -23,10 +23,12 @@ when in the terminal it will show name@dojo.
 ## Intro to commands
 
 ### Description
-For this level, simply invoke the **hello** command in the Linux terminal. Remembering it's case sensitive. We receive the flag, and to exit the SSH session, we type **exit**.
+For this level simply invoke the **hello** command in the Linux terminal. 
+Remembering it's case sensitive.
+We receive the flag and to exit the SSH session we type **exit**.
 
 ### Info / Stuff We Should Know
-The command is case sensitive, and exiting the SSH session is necessary after obtaining the flag.
+The command is case sensitive.
 
 ### Step-by-Step Solution
 
@@ -49,7 +51,8 @@ exit
 ## Intro to Arguments
 
 ### Description
-To find the Flag here, we run the command **hello hackers** in the terminal. This executes the **hello** command with **hackers** as its argument, hence revealing the flag.
+To find the Flag here we run the command **hello hackers** in the terminal. 
+This executes the **hello** command with **hackers** as its argument, hence revealing the flag.
 
 ### Info / Stuff We Should Know
 The command accepts an argument that is crucial for revealing the flag.
