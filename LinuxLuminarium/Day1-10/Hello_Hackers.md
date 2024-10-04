@@ -19,6 +19,7 @@ linux commands are sensitive.
 when in the terminal it will show name@dojo.
 
 ```
+---
 
 ## **Intro to commands**
 
@@ -47,6 +48,8 @@ exit
 
 ![image](https://github.com/user-attachments/assets/85b56ddb-0ed7-4c57-bb56-efc4b45c1f4e)
 ![image](https://github.com/user-attachments/assets/219853d3-33b4-42b8-a318-1b268e8af97e)
+
+---
 
 ## **Intro to Arguments**
 
