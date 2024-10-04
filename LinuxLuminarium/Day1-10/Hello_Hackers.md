@@ -20,7 +20,7 @@ when in the terminal it will show name@dojo.
 
 ```
 
-## Intro to commands
+## **Intro to commands**
 
 ### Description
 For this level simply invoke the **hello** command in the Linux terminal. 
@@ -48,7 +48,7 @@ exit
 ![image](https://github.com/user-attachments/assets/85b56ddb-0ed7-4c57-bb56-efc4b45c1f4e)
 ![image](https://github.com/user-attachments/assets/219853d3-33b4-42b8-a318-1b268e8af97e)
 
-## Intro to Arguments
+## **Intro to Arguments**
 
 ### Description
 To find the Flag here we run the command **hello hackers** in the terminal. 
