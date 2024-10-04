@@ -1,19 +1,29 @@
 # Comprehending Commands
 
-## cat: not the pet, but the command!
+---
 
+### Description
+In this challenge, we are asked to read a file directly using `cat`. The flag is stored in the file `flag`, which we found from doing `ls`. Hence, we use the command `cat flag`. This returns the flag.
+
+### Info / Stuff We Should Know
+- The flag is located in a file named `flag`.
+- We can list files in the directory using the `ls` command.
+
+### Step-by-Step Solution
+
+**Read the file flag**
+```bash
+cat flag
 ```
 
-In this challenge we are asked to read a file directly using cat. The flag is stored in the file flag which we found from doing *ls*
-Hence we use the command *cat flag*
-This returns the flag.
+### Flag
+> **Flag:** `854TpKiLLVYslvWrHZK7i0FXthF.dFzN1QDL4czNOCZW`
 
-Flag -> 854TpKiLLVYslvWrHZK7i0FXthF.dFzN1QDL4czNOCZW
-
-(p.s i will still pet tha cat)
-```
+**(p.s i will still pet tha cat)**
 
 ![image](https://github.com/user-attachments/assets/2bc75152-7436-4053-a366-1f2634f6aae5)
+
+---
 
 ## catting absolute paths
 ```
