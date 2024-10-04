@@ -19,7 +19,7 @@ The command requires specifying the absolute path to the executable located in t
 ```
 
 ### Flag
-> **Flag:** `AhtgI2aIJwYv7p_Ye1_1EmmQz6c.dhzN5QDL4czN0czw`
+>  `AhtgI2aIJwYv7p_Ye1_1EmmQz6c.dhzN5QDL4czN0czw`
 
 ![image](https://github.com/user-attachments/assets/4d5fcc1d-d6de-4297-9b23-4e881782d899)
 
@@ -42,7 +42,7 @@ To execute the program we need to use its absolute path **/challenge/run**. It r
 ```
 
 ### Flag
-> **Flag:** `wjv0fqhMGmPgZNJpA1vBE8UoeYq.dVDN1QDL4czN0czW`
+> `wjv0fqhMGmPgZNJpA1vBE8UoeYq.dVDN1QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/efee2f36-d5c4-4421-a9ae-45b4dcb4058e)
 
@@ -72,7 +72,7 @@ cd /usr/share/doc/fontconfig
 ```
 
 ### Flag
-> **Flag:** `4CHtiNCVcDoa6Fzx88MSZegt8cN.dZDN1QDL4czN0czW`
+>  `4CHtiNCVcDoa6Fzx88MSZegt8cN.dZDN1QDL4czN0czW`
 
 
 ![image](https://github.com/user-attachments/assets/c9083793-d2ae-457d-93c7-e645d6f1de16)
@@ -101,7 +101,7 @@ cd /usr/bin
 ```
 
 ### Flag
-> **Flag:** `gvuIVp5frExfcmXOLIM064DL6la.ddDN1QDL4czN0czW`
+>  `gvuIVp5frExfcmXOLIM064DL6la.ddDN1QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/35b1d138-5bd8-4da0-aacc-561a5bc3796b)
 
@@ -128,7 +128,7 @@ cd /var
 ```
 
 ### Flag
-> **Flag:** `IB-f4M_2InLhgHsdjqb0fAwM9db.dhDN1QDL4czN0czWj`
+>  `IB-f4M_2InLhgHsdjqb0fAwM9db.dhDN1QDL4czN0czWj`
 
 ![image](https://github.com/user-attachments/assets/32332af0-11fa-4974-bd4d-c1251a35d95d)
 
@@ -156,7 +156,7 @@ challenge/run
 ```
 
 ### Flag
-> **Flag:** `YVki8xoWpHfQOV7KгZI0P0mLN85.dlDN1QDL4czN0czW`
+>  `YVki8xoWpHfQOV7KгZI0P0mLN85.dlDN1QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/16476613-0866-4c83-aaae-995f8092c2e7)
 
@@ -188,7 +188,7 @@ cd /
 ```
 
 ### Flag
-> **Flag:** `8QuhNryEq9ycQKrjhL_QheiuC4u.dBTN1QDL4czN0czW`
+>  `8QuhNryEq9ycQKrjhL_QheiuC4u.dBTN1QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/bdae5bb8-0e4e-4982-b7dd-8eb7784f06c8)
 ![image](https://github.com/user-attachments/assets/ad778fae-6fbb-4d28-b2b4-1e2de2c2ab52)
@@ -216,7 +216,7 @@ cd /challenge
 ```
 
 ### Flag
-> **Flag:** `kzLeDdJZQCIaHA59NnVwkfIVx4f.dFTN1QDL4czN0czW`
+>  `kzLeDdJZQCIaHA59NnVwkfIVx4f.dFTN1QDL4czN0czW`
 
 ![image](https://github.com/user-attachments/assets/42a88925-5e7a-4911-8542-5c97e85d7aab)
 
@@ -246,7 +246,7 @@ Argument: **~/x** (This tells the computer where to put the result in a file cal
 ```
 
 ### Flag
-> **Flag:** `EM4F1PXVV5X2MHsBf5VpnCPNbs8.dNzM4QDL4czNcZW`
+> `EM4F1PXVV5X2MHsBf5VpnCPNbs8.dNzM4QDL4czNcZW`
 
 ![image](https://github.com/user-attachments/assets/f1e8c511-6000-4d9a-b65a-7982d1fc0700)
 
