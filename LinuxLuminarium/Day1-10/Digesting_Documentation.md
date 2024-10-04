@@ -1,25 +1,52 @@
 # Digesting Documentation
 
-## Learning from Documentation
-```
-In this challenge we are required to pass the command /challenge/challenge with the argument --giveflag.
-As a command this is /challenge/challenge --giveflag
+---
 
-Flag -> YMeDVM_1zGQ2C7-uO4a_kgH3NOB.dRjM5QDL4czN0czW
+## **Learning from Documentation**
 
-NOTE - Using - and -- are both arguments however - is followed by a letter hence
-       condesned form or -- is followed by command name which is expanded for eg ls -a)
+### Description
+In this challenge, we are required to pass the command `/challenge/challenge` with the argument `--giveflag`.
+
+### Info / Stuff We Should Know
+- The full command is `/challenge/challenge --giveflag`.
+- Both `-` and `--` are used for arguments; however, `-` is followed by a letter (condensed form)
+  while `--` is followed by the command name (expanded form).
+
+### Step-by-Step Solution
+
+**First basic command**
+```bash
+/challenge/challenge --giveflag
 ```
+### Flag
+> YMeDVM_1zGQ2C7-uO4a_kgH3NOB.dRjM5QDL4czN0czW 
+
 ![image](https://github.com/user-attachments/assets/a8b7034d-ff09-46db-9447-fd6a353b7f18)
+---
 
-## Learning Complex Usage
-```
-In this challenge we are required to pass the argument --printfile with the path to the flag after it as shown in the example.
-We can do this by /challenge/challenge --printfile /flag where /flag is our path to the flag.
+## **Learning Complex Usage**
 
-Flag -> cepaK_5fTUgPpp0OrkFJ6DcNI9Z.dVjM5QDL4czN0czW
+### Description
+In this challenge, we are required to pass the argument `--printfile` 
+with the path to the flag after it.
+
+### Info / Stuff We Should Know
+- The command structure is `/challenge/challenge --printfile <path_to_flag>`.
+- In this case, we use `/flag` as the path to the flag.
+
+### Step-by-Step Solution
+
+**basic command**
+```bash
+/challenge/challenge --printfile /flag
 ```
+
+### Flag
+> 09S57AQLuUvJDJ0uxzJxleeW9Nz.dlTM5QDL4czNOCZW
+
 ![image](https://github.com/user-attachments/assets/452bb5cd-f278-4eca-9f27-567dac7e749b)
+
+---
 
 ## Reading Manuals
 ```
