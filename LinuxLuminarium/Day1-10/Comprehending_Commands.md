@@ -1,9 +1,11 @@
 # Comprehending Commands
 
----
+## **Cat: not the pet, but the command**
 
 ### Description
-In this challenge, we are asked to read a file directly using `cat`. The flag is stored in the file `flag`, which we found from doing `ls`. Hence, we use the command `cat flag`. This returns the flag.
+In this challenge we are asked to read a file directly using `cat`. 
+The flag is stored in the file `flag`, which we found from doing `ls`. 
+Hence we use the command `cat flag`. This returns the flag.
 
 ### Info / Stuff We Should Know
 - The flag is located in a file named `flag`.
@@ -25,9 +27,7 @@ cat flag
 
 ---
 
----
-
-## catting absolute paths
+## **catting absolute paths**
 
 ### Description
 As it is asking us to use an absolute path when referencing the flag file we must use `cat /flag`.
@@ -53,33 +53,60 @@ cat /flag
 
 ---
 
-## more catting practice
+## **more catting practice**
+
+### Description
+In this challenge we are asked to read the flag file from the crazy directory and we cannot use cd.
+This means we must use an absolute path.
+However there is no directory or path we can possibly consider 
+
+Hence we first do ls which lists out the directories desktop and x We first try cd x.
+
+To which we are given a prompt indicating where the user has actually hidden the flag file.
+
+This prompt states You MUST chase past cat the absolute path of where I put it on the filesystem which is /opt/pwndbg/tests/flag.
+
+### Info / Stuff We Should Know
+- We cannot change directories with cd so we must directly reference the flag file using its absolute path
+- The prompt gives us a hint about the exact location of the flag file
+
+### Step-by-Step Solution
+
+**Read the flag file using its absolute path**
+```bash
+cat /opt/pwndbg/tests/flag
 ```
-In this challenge we are asked to read the flag file from the crazy directory and we cannot use cd. This means we must use an absolute path.
-However there is no directory or path we can possibly consider. hence we first do ls. this lists out directories desktop and x. We first try cd x.
+### Flag
+> **Flag:** `U5A09mAMuBzIWCEMгnLOEAWHW2Y.dBjM5QDL4czN0czw`
 
-To which we are given where the user has actually hidden the flag file. This prompt is given by
-you MUST chase pass 'cat' the absolute path of where I put it on the filesystem (which is /opt/pwndbg/tests/flag).
-
-hence we do the command *cat /opt/pwndbg/tests/flag* which gives an absolute path to flag.
-
-Flag -> U5A09mAMuBzIWCEMгnLOEAWHW2Y.dBjM5QDL4czN0czw
-
-(p.s this level shoulda been called more petting practice)
-```
+**(p.s This level should have been called more petting practice)**
 ![image](https://github.com/user-attachments/assets/9a1e1e0e-1a37-4de9-bf5f-4e5de3f4b99f)
 
+---
 
-## grepping for a needle in a haystack
-```
-In this challenge we are given a path to a text file where there are 1000s of lines of data code. to search for our flag here we must
-Use the grep command which has the syntax *grep "stringtosearch" path* in this context we are given the path and know the starting
-part string of each flag hence our command is *grep "pwn.college" /challenge/data.txt*
+## **grepping for a needle in a haystack**
+
+### Description
+In this challenge we are given a path to a text file where there are 1000s of lines of data code. To search for our flag here we must use the grep command which has the syntax grep "stringtosearch" path. In this context we are given the path and know the starting part string of each flag. Hence our command is grep "pwn.college" /challenge/data.txt.
 
 This returns our flag.
-Flag -> EOR7-Bq_03RSTLyaJN4KiceHZ1c.ddTM4QDL4czN0czw
+
+### Info / Stuff We Should Know
+- The grep command searches for specific strings within files.
+- The syntax for grep is grep "stringtosearch" path.
+
+### Step-by-Step Solution
+
+**Search for the flag in the text file**
+```bash
+grep "pwn.college" /challenge/data.txt
 ```
+### Flag
+> **Flag:** `EOR7-Bq_03RSTLyaJN4KiceHZ1c.ddTM4QDL4czN0cz`
+
 ![image](https://github.com/user-attachments/assets/41d54ebe-53ff-4efc-8ffb-6ca2bd2a1dac)
+
+---
 
 ## listing files
 ```
@@ -194,45 +221,70 @@ Flag -> c6g1unb6WJAnA5K1dRu8mbOhOV3.dFzM4QDL4czN0czW
 ```
 ![image](https://github.com/user-attachments/assets/35c36bd1-ef7a-456f-a711-1214405ed6f7)
 
+---
 
-## finding files
+## **finding files**
+
+### Description
+In this challenge we are expected to search the entire file system for a file called flag. 
+Using the command they gave us for find called find / -name flag it will show us all paths with the name flag in its filename. 
+This command searches in the root directory for all the file names with flag. It gives a list of files. Luckily catting the first path returns the flag.
+
+### Info / Stuff We Should Know
+- The find command searches for files in the file system.
+- The syntax for searching files can vary based on the parameters used.
+- SEARCHING File syntaxes ->
+  1. find (searches current directory)
+  2. find directoryname (searches in directoryname)
+  3. find -name directoryname (searches for the directoryname)
+
+### Step-by-Step Solution
+
+**Search for the flag file in the entire file system**
+```bash
+find / -name flag
 ```
-In this challenge we are expected to search the entire file system for a file called flag.
-Using the command they gave us for find called find / -name flag it will show us all paths with the name flag in its filename.
-This command searches in the root directory for all the file names with flag.
-It gives a list of files luckily catting the first path returns the flag.
-
-Flag -> kqzgDvgkOkoDhqupJmxJ8UKC2AV.dJzM4QDL4czN0czW
-
-NOTE:
-SEARCHING File syntaxes ->
-1. find (searches current directory)
-2. find directoryname (searches in directoryname)
-3. find -name directoryname (searches for the directoryname)
+**Cat the first path returned to read the flag**
+```bash
+cat /path/to/flag
 ```
+
+### Flag
+> **Flag:** `kqzgDvgkOkoDhqupJmxJ8UKC2AV.dJzM4QDL4czN0czW`
+
 ![image](https://github.com/user-attachments/assets/cabb3d2a-9797-4c44-b5be-aee746d01615)
 
 
-## linking files
+---
+## **linking files**
+
+### Description
+In this challenge we are expected to use a symbolic link to make /challenge/catflag read the contents of /flag instead of /home/hacker/not-the-flag. Doing /challenge/catflag outputs About to read out the /home/hacker/not-the-flag file.
+
+Hence now we create a symlink. This makes /home/hacker/not-the-flag act as a link to /flag. This will allow the return of the flag since it will follow the symlink and read /flag instead of /home/hacker/not-the-flag.
+
+We do this using the command ln -s /flag /home/hacker/not-the-flag. Hence running the command /challenge/catflag returns the flag.
+
+### Info / Stuff We Should Know
+- A symbolic link allows us to reference a file or directory from another location.
+- The symlink points to the actual file we want to read.
+
+### Step-by-Step Solution
+
+**Create a symbolic link to the flag file**
+```bash
+ln -s /flag /home/hacker/not-the-flag
 ```
-In this challenge we are expected to use a symbolic link to make /challenge/catflag read the contents of /flag
-instead of /home/hacker/not-the-flag.
-doing /challenge/catflag
-This  outputs About to read out the /home/hacker/not-the-flag file!
-
-hence now we create a symlink.
-This makes /home/hacker/not-the-flag act as a link to /flag.
-this will allow the return of the flag since it will follow the symlink and read /flag instead of /home/hacker/not-the-flag.
-
-we do this using the command ls -s /flag /home/hacker/not-the-flag
-hence running the command /challenge/catflag returns the flag.
-
-
-Flag -> 4IjF5BNYn8Gq9tBlkFgPY3pxvE8.dlTM1UDL4czN0czW
+**Read the flag file through the symbolic link**
+```bash
+/challenge/catflag
 ```
+
+### Flag
+> **Flag:** `4IjF5BNYn8Gq9tBlkFgPY3pxvE8.dlTM1UDL4czN0czW`
+
 ![image](https://github.com/user-attachments/assets/b736dad7-84b9-4d97-b882-77ce6742ebe6)
 
-
-
+---
 
 
