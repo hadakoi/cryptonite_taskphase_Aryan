@@ -47,22 +47,34 @@ with the path to the flag after it.
 ![image](https://github.com/user-attachments/assets/452bb5cd-f278-4eca-9f27-567dac7e749b)
 
 ---
-
 ## Reading Manuals
-```
-In this challenge we are required to use the man command which displays the manual pages for other commands and concept.
-Over here we are supposed to use the man command for the programme challenge.
-Hence we do man challenge.
-This presents us with the manual for the command /challenge/challenge
-In the arguments section we see 3 options with the argument --gyjzaq NUM being the best as it returns the flag if we set NUM as 661
 
-Hence when using the command it is /challenge/challenge --gyjzaq 661. This returns the flag.
+### Description
+In this challeng we are required to use the `man` command which displays the manual pages for other commands and concepts. Here we are supposed to use the `man` command for the program `challenge`. Hence
+ we execute `man challenge`. This presents us with the manual for the command `/challenge/challenge`. In the arguments section we see 3 options with the argument `--gyjzaq NUM` being the best as it returns the flag if we set `NUM` as `661`.
 
-Flag -> AgyjzME6TW6Ha1FPqxzwVtXOSfU.dRTM4QDL4czN0czW
+### Info / Stuff We Should Know
+- The `man` command shows the manual or documentation for a given command.
+- To use the correct argument for the command you need to carefully read the manual's argument section.
+
+### Step-by-Step Solution
+
+**Read the manual and run the command**
+```bash
+man challenge
+
+/challenge/challenge --gyjzaq 661
 ```
+
+### Flag
+> AgyjzME6TW6Ha1FPqxzwVtXOSfU.dRTM4QDL4czN0czW
+
 ![image](https://github.com/user-attachments/assets/818a98a4-7eb2-48d7-8184-96f4ca489f23)
 
+---
+
 ## Searching Manuals
+
 ```
 In this challenge we are supposed to search through the manual to find the correct argument to return the flag.
 We do man challenge to first open the manual
