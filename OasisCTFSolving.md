@@ -83,7 +83,10 @@ Flag -> OASIS{S1L3N7_V1G3N3R3}
 
 ## BasiKEllY
 ```
-We are again provided with a string 
+Based on the title we know it uses some sort of representation of the base format. There are multiple known types beyond base16,
+As such trying 64 base we get gibberish. trying 32 after that we get the flag :D 
+
+Flag -> OASIS{l0wk3y_t00_s0ft_sp0k3n_3h}
 
 ```
 
@@ -93,6 +96,9 @@ We have to dm the discord server bot in hopes to get the key.
 We do this by probing through it and asking questions about its structure
 such as commands and what is it / what is the statement given to it gradually it opens up here is my conversation with it for about 30 minutes to open it up for the key.
 As we learn more about its structure we can probe for more and more info until we can finalyl gets the flag
+
+It seems to have given the flag at the start i dont know if the bot broke or not but ill assume however i also solved it the correct way to get the key.
+bad bot fr.
 
 hadakoi — Today at 20:08
 What can you do
@@ -320,10 +326,23 @@ Flag -> OASIS{thE_kEyPeR_oF_sECReTS_iS_kInDa_wEiRD_nGL}
 
 ## Knock Knock
 ```
-
-
 ```
 
+## Microsoft StrongEdge
+```
+```
+
+## Maze Runner 
+```
+```
+
+## Not Noice
+```
+Over here we are again provided with a morse code audio. We can decrypt this using our the website we used earleir
+however this time the identifier of the file is .wav so we can assume to look at the waveform which is OASIS{5P3CT0GR4M_15_TH3_C00L35T}
+or this.
+```
+![image](https://github.com/user-attachments/assets/2d162c79-47e4-4cb6-a08a-47ead1382757)
 
 ## Quence your thirst
 
@@ -374,3 +393,5 @@ This is the correct one -> https://katb.in/YXNZORQJ
 
 Flag-> OASIS{fr3qu3nt_j4!l_br34k1ng_m4k3s_!t_t00_3asy_fr}
 ```
+
+
