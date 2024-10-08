@@ -77,12 +77,10 @@ man challenge
 
 ### Description
 In this challenge, we are supposed to search through the manual to find the correct argument to return the flag. We do `man challenge` to first open the manual.
+Once opened, we do `/nameofitem`. `nameofitem` is what we want to search for, in this case, "flag". So we do `/flag`, which allows us to search for all instances of "flag". We move across these instances by pressing `n`. We find that the argument is called `--zzeg`.
 
 ### Info / Stuff We Should Know
-- Once opened, we do `/nameofitem`. `nameofitem` is what we want to search for, in this case, "flag".
-- So we do `/flag`, which allows us to search for all instances of "flag".
-- We move across these instances by pressing `n`.
-- We find that the argument is called `--zzeg`.
+- Nothing to note.
 
 ### Step-by-Step Solution
 
@@ -104,15 +102,11 @@ In this challenge, we are supposed to search through the manual to find the corr
 ## **Searching for Manuals**
 
 ### Description
-In this challenge, we need to find the command argument for `/challenge/challenge`. Unfortunately, we cannot find a manual entry for "challenge," so we start by opening `man man`.
+In this challenge, we need to find the command argument for `/challenge/challenge`. Unfortunately, we cannot find a manual entry for "challenge," so we start by opening `man man`. We then see a description for a command that searches for man page names and descriptions related to a word 'man -k challenge'. This returns a command called gofuewroff.
+To learn more about this command man gofuewroff we can do man for it. Here, we find that the command has the argument '--gofuew NUM', which prints the flag if NUM is 824.
 
 ### Info / Stuff We Should Know
 - In the `man man` page, we discover the `man -k` command, which searches for man page names and descriptions related to a specific word.
-- man -k challenge
-- This returns a command called gofuewroff.
-- To learn more about this command man gofuewroff
-- Here, we find that the command has the argument --gofuew NUM, which prints the flag if NUM is 824.
-
 
 ### Step-by-Step Solution
 
@@ -137,10 +131,10 @@ In this challenge, we need to find the command argument for `/challenge/challeng
 
 ### Description
 In this challenge, we are tasked with assuming that `/challenge/challenge` does not have a man page. To find the available commands, we can use the `--help` option.
+When doing this 2 commands stand out two stand out: *-g GIVE_THE_FLAG*, *--give-the-flag GIVE_THE_FLAG* get the flag, if given the correct value -p, --print-value print the value that will cause the -g option to give you the flag
 
 ### Info / Stuff We Should Know
-- Running the command `/challenge/challenge --help` reveals several commands, but two stand out:
--g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG get the flag, if given the correct value -p, --print-value print the value that will cause the -g option to give you the flag
+- Running the command `/challenge/challenge --help` reveals several commands abd functions about the command /challenge/challenge.
 
 ### Step-by-Step Solution
 
@@ -164,12 +158,13 @@ In this challenge, we are tasked with assuming that `/challenge/challenge` does 
 
 ### Description
 In this challenge, we are supposed to use the help command to identify and learn how to use the challenge command. We do this by typing `help challenge`.
+The command structure provided is:
+
+'challenge [--fortune] [--version] [--secret SECRET]'
+Only the '--secret' option is valid for retrieving the flag, and the correct secret value to pass is "YP7mlzAu".
 
 ### Info / Stuff We Should Know
-- The help command gives us information about the usage of the command:
-- challenge [--fortune] [--version] [--secret SECRET] This builtin command will read you the flag, given the right arguments!
-- Among the options, only `--secret VALUE` is valid for finding the flag:
-- The correct value to provide is `"YP7mlzAu"`.
+- The help command gives us information about the usage of the command
 
 ### Step-by-Step Solution
 
