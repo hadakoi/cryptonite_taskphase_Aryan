@@ -73,25 +73,33 @@ man challenge
 
 ---
 
-## Searching Manuals
+## **Searching Manuals**
 
+### Description
+In this challenge, we are supposed to search through the manual to find the correct argument to return the flag. We do `man challenge` to first open the manual.
+
+### Info / Stuff We Should Know
+- Once opened, we do `/nameofitem`. `nameofitem` is what we want to search for, in this case, "flag".
+- So we do `/flag`, which allows us to search for all instances of "flag".
+- We move across these instances by pressing `n`.
+- We find that the argument is called `--zzeg`.
+
+### Step-by-Step Solution
+
+**Command to run**
+```bash
+/challenge/challenge --zzeg
 ```
-In this challenge we are supposed to search through the manual to find the correct argument to return the flag.
-We do man challenge to first open the manual
 
-once opened we do /nameofitem. nameofitem is what we want to search for in this case flag.
-so we do /flag hence allowing us to search for all instances of flag.
-we move across these instances by pressing n.
-We find that it is called --zzeg
+### Flag
+> 4fMEyCn363egjI438iwi7PycnAq.dVTM4QDL4czN0czW
 
-Hence we run the command /challenge/challenge --zzeg this returns the flag.
-
-Flag -> 4fMEyCn363egjI438iwi7PycnAq.dVTM4QDL4czN0czW
-```
 ![image](https://github.com/user-attachments/assets/f3dd5699-3ea5-40d7-8d7c-fda9ff0d2cd5)
 ![image](https://github.com/user-attachments/assets/ccf30060-5e24-4714-ad9a-8a3e769dbba8)
 ![image](https://github.com/user-attachments/assets/dfbc35b0-0fce-4c87-b339-6d3a350737e0)
 ![image](https://github.com/user-attachments/assets/9108d48c-d57c-4243-8e38-d9343fe1e330)
+
+---
 
 ## Searching for Manuals
 ```
