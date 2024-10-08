@@ -101,64 +101,89 @@ In this challenge, we are supposed to search through the manual to find the corr
 
 ---
 
-## Searching for Manuals
-```
-In this challenge we have to find the command argument for /challenge/challenge by. Sadly we do not know how to find the man challenge.
-However there is no manual entry for challenge. so we first have to open up man man.
-Upon opening it we can see the man -k command which is used for searching for man page names and descriptions for that specific word.
-Hence doing man -k challenge.
-We are given a name for a command called gofuewroff. Now we need to find what this command does so doing
-man gofuewroff we find what the command does which is --gofuew NUM where it prints the flag if NUM is 824
+## **Searching for Manuals**
 
-Now our command is /challenge/challenge --gofuew 824
+### Description
+In this challenge, we need to find the command argument for `/challenge/challenge`. Unfortunately, we cannot find a manual entry for "challenge," so we start by opening `man man`.
 
-Flag -> EEgVWGoFfBu8ewrEoXffA2fCOvN.dZTM4QDL4czN0czW
+### Info / Stuff We Should Know
+- In the `man man` page, we discover the `man -k` command, which searches for man page names and descriptions related to a specific word.
+- man -k challenge
+- This returns a command called gofuewroff.
+- To learn more about this command man gofuewroff
+- Here, we find that the command has the argument --gofuew NUM, which prints the flag if NUM is 824.
+
+
+### Step-by-Step Solution
+
+**Finding the correct command.**
+```bash
+ man -k challenge
 ```
+**Retrieve the flag**
+```bash
+/challenge/challenge --gofuew 824
+```
+
+### Flag
+> EEgVWGoFfBu8ewrEoXffA2fCOvN.dZTM4QDL4czN0czW
+
 ![image](https://github.com/user-attachments/assets/06b9c5a3-a143-4bbc-9303-6bfe0ac68a4b)
 ![image](https://github.com/user-attachments/assets/f7e105a6-4b8d-4244-a28a-ee73839bb855)
 
-## Helpful Programmes
+---
+
+## **Helpful Programmes**
+
+### Description
+In this challenge, we are tasked with assuming that `/challenge/challenge` does not have a man page. To find the available commands, we can use the `--help` option.
+
+### Info / Stuff We Should Know
+- Running the command `/challenge/challenge --help` reveals several commands, but two stand out:
+-g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG get the flag, if given the correct value -p, --print-value print the value that will cause the -g option to give you the flag
+
+### Step-by-Step Solution
+
+**Returns the value.**
+```bash
+ /challenge/challenge --print-value 
 ```
-In this challenge we are given to assume /challenge/challenge does not have a man page.
-So to find commands for this we can use commandname --help.
-doing /challenge/challenge we see 4 commands but 2 mainly stand out.
-
--g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG
-                        get the flag, if given the correct value
--p, --print-value
-                       print the value that will cause the -g option to give you the flag
-
-as such first we should find the value using /challenge/challenge --print-value or -p
-this returns the value of 554
-
-Now using the -g command we can do
+**Retrieve the flag**
+```bash
 /challenge/challenge -g 554
-
-Flag -> YwY5pcQYniOGvRDQ5KPt-bsB_df.ddjM4QDL4czN0czW
 ```
+
+### Flag
+> YwY5pcQYniOGvRDQ5KPt-bsB_df.ddjM4QDL4czN0czW
+
 ![image](https://github.com/user-attachments/assets/979914b9-fbb9-4af7-b043-110585d99c6b)
 
-## Help for Builtins
+---
+
+## **Help for Builtins**
+
+### Description
+In this challenge, we are supposed to use the help command to identify and learn how to use the challenge command. We do this by typing `help challenge`.
+
+### Info / Stuff We Should Know
+- The help command gives us information about the usage of the command:
+- challenge [--fortune] [--version] [--secret SECRET] This builtin command will read you the flag, given the right arguments!
+- Among the options, only `--secret VALUE` is valid for finding the flag:
+- The correct value to provide is `"YP7mlzAu"`.
+
+### Step-by-Step Solution
+
+**Command to run**
+```bash
+challenge --secret "YP7mlzAu"
 ```
-In this challenge we are supposed to use the help command to identify and learn how to use the challenge command.
-we do this by typing help challenge.
 
-It first gives us how to use the command
-challenge [--fortune] [--version] [--secret SECRET]
-    This builtin command will read you the flag, given the right arguments!
+### Flag
+> YP7mlzAuPLqRRIHnRZZcfA0hu9S.dRTM5QDL4czN0czW
 
-next it gives 3 options for arguments however only 1 is valid for finding the flag
---secret VALUE	prints the flag, if VALUE is correct
-    You must be sure to provide the right value to --secret. That value
-    is "YP7mlzAu".
-
-As such our command is now challenge --secret "YP7mlzAu"
-THis returns the flag
-
-Flag -> YP7mlzAuPLqRRIHnRZZcfA0hu9S.dRTM5QDL4czN0czW
-```
 ![image](https://github.com/user-attachments/assets/2ec22dbc-c8b1-4859-ac52-a198eef2adbb)
 
+---
 
 
 
