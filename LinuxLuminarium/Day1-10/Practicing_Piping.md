@@ -1,85 +1,155 @@
 # Practicing Piping
+---
 
 ## Redirecting Output
+
+### Description
+In this challenge, we are tasked with redirecting the word **PWN** to a file named **COLLEGE**.  
+To achieve this, we use the `echo` command, which outputs the specified text and redirects it to the desired file.
+
+### Info / Stuff We Should Know
+- The `>` operator is used to redirect the output from the `echo` command to a file.
+- If the file does not exist, it will be created; if it does exist, its contents will be overwritten.
+
+### Step-by-Step Solution
+
+**Command to redirect the output:**
+```bash
+echo PWN > COLLEGE
 ```
-In this challenge we are asked to redirect word PWN to the filename COLLEGE.
 
-To do this we  echo PWN > COLLEGE
-PWN is passed to COLLEGE
+### Flag
+>  `ETwqJ7hiwnEZBinH-X9hRIvEq47.dRjN1QDL4czN0czW`
 
-This returns the flag.
-
-Flag -> ETwqJ7hiwnEZBinH-X9hRIvEq47.dRjN1QDL4czN0czW
-```
 ![image](https://github.com/user-attachments/assets/5a5358bb-7304-4902-aa8b-95df677e7f83)
 
+---
+
 ## Redirecting more Output
-```
-In this challenge we are asked to redirect output without the use of echo.
-for this challenge we need to redirect the output from /challenge/run to a file called myflag
 
-we can do this by doing /challenge/run > myflag
-after having done this we are told that the redirection was successful hence
-we can now do cat myflag to see the output. This returns the flag.
+### Description
+In this challenge, we are required to redirect the output of the program **/challenge/run** to a file named **myflag** without using the `echo` command.  
+This task involves running the command and redirecting its output to the specified file.
+We can use the `cat` command to view the contents of the redirected file.
 
-Flag -> kokZcFxqoxHnvmgZdZ6YPs4c08r.dVjN1QDL4czN0czW
+
+### Info / Stuff We Should Know
+- The `>` operator is used to redirect the output from a command to a file.
+- If the file does not exist, it will be created; if it does exist, its contents will be overwritten.
+
+### Step-by-Step Solution
+
+**Command to redirect the output:**
+```bash
+/challenge/run > myflag
 ```
+
+**Command to view the contents of the redirected output:**
+```bash
+cat myflag
+```
+
+### Flag
+>  `kokZcFxqoxHnvmgZdZ6YPs4c08r.dVjN1QDL4czN0czW`
+
+
 ![image](https://github.com/user-attachments/assets/6b0e248f-a4d0-4a20-8cdf-200fbcde9720)
 
+---
+
 ## Appending Output
+
+### Description
+In this challenge, we are required to redirect the output of **/challenge/run** in append mode.  
+This allows us to concatenate the first and second halves of the flag into the same file located at **/home/hacker/the-flag**.  
+
+Appending output is similar to redirection but uses the `>>` operator, which adds content to the end of the specified file instead of overwriting it. We can then use the `cat` command to view the contents of the file after appending.
+
+### Info / Stuff We Should Know
+- The `>>` operator is used to append the output of a command to an existing file.
+- If the file does not exist, it will be created; if it does exist, the new output will be added to the end of the file.
+
+### Step-by-Step Solution
+
+**Command to append the output:**
+```bash
+/challenge/run >> /home/hacker/the-flag
 ```
-In this challenge you need to redirect the output of /challenge/run in append mode.
-THis so that the first and second halves of the flag are properly concatenated into the same file /home/hacker/the-flag
-Append mode is different from passing the outputs but similar using >>
 
-Over here we need to redirect the output of /challenge/run to the file /home/hacker/the-flag
-This is done by /challenge/run >> /home/hacker/the-flag.
-What basically happens is the first half of the flag directly written into the recieving file.
-Whereas the second half is appended at the end of the recieving file.
-
-As such after using the append command we can then cat /home/hacker/the-flag where we recieve the flag and an explanation.
-
-Flag -> 0guvNn-TJoIsQCcmW9tuCDoLr0G.ddDM5QDL4czN0czW
+**Command to view the contents of the appended file:**
+```bash
+cat /home/hacker/the-flag
 ```
+
+### Flag
+>  `0guvNn-TJoIsQCcmW9tuCDoLr0G.ddDM5QDL4czN0czW`
+
 ![image](https://github.com/user-attachments/assets/dbc10666-0517-474f-80c4-94dbb0224dbb)
 
+---
 ## Redirecting Errors
+
+### Description
+In this challenge, we need to redirect the output of **/challenge/run** in two ways: 
+1. Redirect standard output (stdout), which contains the flag, to a file called **myflag**.
+2. Redirect standard error (stderr), which contains any instructions or error messages, to a file called **instructions**.
+
+### Info / Stuff We Should Know
+- In Linux, file descriptors represent different channels for processes:
+  - **FD 0:** Standard Input (stdin) - Input stream for user input.
+  - **FD 1:** Standard Output (stdout) - Output stream for regular command output.
+  - **FD 2:** Standard Error (stderr) - Output stream for error messages.
+- Redirection can be specified using `1>` for stdout and `2>` for stderr.
+- Both outputs can be redirected simultaneously using the format:
+  ```bash
+  command > output.log 2> errors.log
+  ```
+
+### Step-by-Step Solution
+
+**Command to redirect stdout and stderr:**
+```bash
+/challenge/run 1> myflag 2> instructions
 ```
-Note -> In linux files there are file descriptions that are numbers that represent different channels for processes.
-1. FD 0: Standard Input (stdin) - Input stream for taking user input.
-2. FD 1: Standard Output (stdout) - Output stream for regular command output.
-3. FD 2: Standard Error (stderr) - Output stream for error messages.
-We can use these in our redirection as its already redirecting one of these types of files.
-we can specify it by doing 1> or 2>.
-We can also redirect both at the same time. command > output.log 2> errors.log
-
-In this challenge we need to redirect the output of /challenge/run in two ways:
-Redirect stdout (the flag) to a file called myflag.
-Redirect stderr (the instructions) to a file called instructions
-
-stdout stands for standard output or 1> and stderr is for 2>
-We can do this mainly by
-/challenge/run 1> myflag 2> instructions which can also be /challenge/run > myflag 2> instructions.
-What happens here is the flag is put in myflag which is our basic output for the command.
-While the other part >2 instructions passes feedback or any error message to the instructions file.
-
-Flag -> 0GwdkQdwRw79WCFOIQEs1kN8l8I.ddjN1QDL4czN0czW
+*Alternatively, you can use:*
+```bash
+/challenge/run > myflag 2> instructions
 ```
+
+### Flag
+>  `0GwdkQdwRw79WCFOIQEs1kN8l8I.ddjN1QDL4czN0czW`
+
 ![image](https://github.com/user-attachments/assets/3465b1aa-4aa6-4b36-ac03-4f4d20666c79)
 
-## Redirecting input
-```
-In this challenge we are required to redirect the PWN file with the value of COLLEGE to the /challenge/run command.
+---
 
-We can enter COLLEGE into pwn using the echo command this is done by echo COLLEGE > PWN
-When using a file is input we reverse the sign for redirecting which is <.
-Hence our command becomes /challenge/run < PWN
-This will Redirect the contents of the PWN file (which contains COLLEGE) as input to /challenge/run.
+## Redirecting Input
 
-Flag -> kTFr660CcvTdRZPRxXiSiuC45Gj.dBzN1QDL4czN0czW
+### Description
+In this challenge, we are required to redirect the **PWN** file, which contains the value **COLLEGE**, as input to the **/challenge/run** command.
+
+### Info / Stuff We Should Know
+- To write the value **COLLEGE** into the **PWN** file, we use the `echo` command:
+- When using a file as input, we reverse the redirection sign to `<`.
+
+### Step-by-Step Solution
+
+**To write the value **COLLEGE** into the **PWN** file, we use the `echo` command:**
+  ```bash
+  echo COLLEGE > PWN
+  ```
+**Command to redirect input:**
+```bash
+/challenge/run < PWN
 ```
+This command redirects the contents of the **PWN** file (which contains **COLLEGE**) as input to **/challenge/run**.
+
+### Flag
+> `kTFr660CcvTdRZPRxXiSiuC45Gj.dBzN1QDL4czN0czW`
+
 ![image](https://github.com/user-attachments/assets/590c4272-c75e-44eb-b233-ee66acc1c0b7)
 
+---
 
 ## Grepping stored results
 ```
@@ -158,28 +228,44 @@ Flag -> kvgvRbZi1zsXve5bu_rkYuajnvD.dBDO0UDL4czN0czW
 ```
 ![image](https://github.com/user-attachments/assets/1b54d597-7f4a-4497-ac9d-252c558e16ec)
 
+---
+
 ## Split Piping stderr and stdout
+
+### Description
+In this challenge, we are supposed to redirect the output from `/challenge/hack` such that standard output (stdout) goes to `/challenge/planet` and standard error (stderr) goes to `/challenge/the`, while keeping them separate.
+
+We can do this with the following command:
+```bash
+/challenge/hack > >( /challenge/planet ) 2> >( /challenge/the )
 ```
-In this challenge we are supposed to redirect the output from /challenge/hack such that standard output (stdout) goes to /challenge/planet and standard error (stderr) goes to /challenge/the, while keeping them separate
 
-We can do this with the command /challenge/hack > >( /challenge/planet ) 2> >( /challenge/the )
-/challenge/hack: This command will run and produce output on both stdout and stderr.
+### Info / Stuff We Should Know (Basically solving pattern this time)
 
->: This operator is used to redirect stdout.
+- `/challenge/hack`: This command runs and produces output on both stdout and stderr.
+- `>`: This operator is used to redirect stdout.
+- `>( /challenge/planet )`: This is a process substitution. It creates a temporary named pipe and connects it to the stdin of `/challenge/planet`. The stdout of `/challenge/hack` will be sent through this pipe to `/challenge/planet`.
+- `2>`: This operator is used to redirect stderr.
+- `>( /challenge/the )`: Similar to the previous substitution, this creates another temporary named pipe that connects stderr from `/challenge/hack` to the stdin of `/challenge/the`.
 
->( /challenge/planet ): This is a process substitution. It creates a temporary named pipe and connects it to the stdin of /challenge/planet. The stdout of /challenge/hack will be sent through this pipe to /challenge/planet.
+### Step-by-Step Solution
 
-2>: This operator is used to redirect stderr.
-
->( /challenge/the ): Similar to the previous substitution, this creates another temporary named pipe that connects stderr from /challenge/hack to the stdin of /challenge/the.
-
-When you execute /challenge/hack, it will generate both stdout and stderr.
-The > operator redirects the stdout to /challenge/planet through the named pipe created by >( /challenge/planet ).
-The 2> operator redirects stderr to /challenge/the through the named pipe created by >( /challenge/the ).
-
-Flag -> IMyuQBRZyN0n1lc3rZnADDlvrla.dFDNwYDL4czN0czW
+**Command to run for redirecting stdout and stderr.**
+```bash
+/challenge/hack > >( /challenge/planet ) 2> >( /challenge/the )
 ```
+
+When you execute `/challenge/hack`, it generates both stdout and stderr. 
+- The `>` operator redirects stdout to `/challenge/planet` through the named pipe created by `>( /challenge/planet )`.
+- The `2>` operator redirects stderr to `/challenge/the` through the named pipe created by `>( /challenge/the )`.
+
+### Flag
+> IMyuQBRZyN0n1lc3rZnADDlvrla.dFDNwYDL4czN0czW
+
 ![image](https://github.com/user-attachments/assets/80885e0d-c2ed-4cf3-a6f5-a0f1c02af6f3)
+
+---
+
 
 
 
