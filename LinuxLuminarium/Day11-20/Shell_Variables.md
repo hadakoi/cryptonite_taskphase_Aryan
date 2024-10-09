@@ -137,6 +137,33 @@ COLLEGE=PWN
 
 ---
 
+## Printing Exported Variables
+
+### Description
+In this challenge, you will learn how to access exported variables using the `env` command. The `env` command prints out every exported variable that is set in your shell session. This is useful for finding specific variables like the `FLAG` variable among many other variables.
+
+### Info / Stuff We should Know
+- **Using the `env` Command**: The `env` command lists all the environment variables including those exported from your current shell. This is a quick way to check which variables are available to child processes.
+
+### Step-by-Step Solution
+
+**Command to print all exported variables**
+```bash
+env
+```
+This ends up printing a big wall of text D:
+
+### Flag
+> Qlc6m-qIbhfr9FHP9wL4b0vCQMg.dhTN1QDL4czN0czW
+
+![image](https://github.com/user-attachments/assets/3cd7bfc3-c391-453c-b3b6-044518ea6040)
+
+---
+
+
+
+
+
 
 
 
