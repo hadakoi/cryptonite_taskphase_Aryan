@@ -151,81 +151,154 @@ This command redirects the contents of the **PWN** file (which contains **COLLEG
 
 ---
 
-## Grepping stored results
+## Grepping Stored Results
+
+### Description
+In this challenge, we are required to redirect the output of `/challenge/run` to `/tmp/data.txt`. Then, we need to search through this text file for the flag. We know the flag begins with pwn.college so we search for that.
+
+### Info / Stuff We Should Know
+
+- grep works in the format of 
+```bash
+grep textofind file.txt
 ```
-In this challenge we are required to redirect the output of /challenge/run to /tmp/data.txt
-Then we are required to search through this text file for the flag.
 
-We can first redirect output by doing /challenge/run > /tmp/data.txt
-Next we can do grep pwn.college /tmp/data.txt. this is because we know the flag begins with pwn.college.
-Hence this returns the flag.
+### Step-by-Step Solution
 
-
-Flag -> AVTGh3SuaYy47qog6g4dBjzjJ6U.dhTM4QDL4czN0czW
+**Command to run for redirecting output and searching for the flag.**
+```bash
+/challenge/run > /tmp/data.txt
+grep pwn.college /tmp/data.txt
 ```
+
+### Flag
+> AVTGh3SuaYy47qog6g4dBjzjJ6U.dhTM4QDL4czN0czW
+
 ![image](https://github.com/user-attachments/assets/b5089535-9e7f-47a7-bb49-0334b810a386)
 
+---
 
-## Grepping live output
-```
-In this challenge we are to use the | operator to directly search the flag.
-Basically using | after a command immediately executes the command thats written after it when the one before it is finished.
-Hence our command will be /challenge/run | grep pwn.college. Hence this returns the flag.
+## Grepping Live Output
 
-Flag -> k0vF1_ixjw--uoSsMxtsBqAbL00.dlTM4QDL4czN0czW
+### Description
+In this challenge, we are to use the `|` operator to directly search for the flag. Using `|` after a command immediately executes the command that follows it once the preceding command is finished.
+
+### Info / Stuff We Should Know
+- Using `|` after a command with a command after it in the form 
+  `command1 | command2` allows the ouput of command1 to be pushed into command2. We can likewise do this for 3 commands
+  `command1 | command2 | command3`
+
+### Step-by-Step Solution
+
+**Command to run for grepping live output.**
+```bash
+/challenge/run | grep pwn.college
 ```
+This command will allow us to pipe the output of `/challenge/run` directly into `grep`, which searches for the flag beginning with `pwn.college`. 
+
+### Flag
+> k0vF1_ixjw--uoSsMxtsBqAbL00.dlTM4QDL4czN0czW
+
 ![image](https://github.com/user-attachments/assets/f7c7966e-e641-45eb-8f94-7f17cbbcc9e0)
 
+---
 
-## Grepping errors
+## Grepping Errors
+
+### Description
+In this challenge, we need to grep through the standard error output from '/challenge/run' which contains the flag. This is done by redirecting standard error (FD 2) to standard output (FD 1) using `2>&1`.
+
+### Info / Stuff We Should Know
+
+`2>&1`:
+
+- This is a redirection command that directs the standard error (file descriptor 2) to the same location as standard output (file descriptor 1).
+-  In simpler terms, any error messages that would normally appear on the screen (standard error) will be combined with the regular output of the program (standard output).
+
+- This means both regular output and error messages will be sent to the same stream.
+
+### Step-by-Step Solution
+
+**Command to run for grepping through errors.**
+```bash
+/challenge/run 2>&1 | grep pwn.college
 ```
-In this challenge we need to To grep through the standard error output
-which is redirect standard error (FD 2) to standard output (FD 1) using 2>&1
+This command redirects the standard error output to standard output, allowing `grep` to search through both.
 
-we can do this in one command again which is /challenge/run 2>&1 | grep pwn.college
+### Flag
+> QvqT4fYY9M6tjS5f-Yej6L9PYd1.dVDM5QDL4czN0czW
 
-Flag -> QvqT4fYY9M6tjS5f-Yej6L9PYd1.dVDM5QDL4czN0czW
-```
 ![image](https://github.com/user-attachments/assets/a6626100-c71c-41bc-a693-f24d209b121d)
 
-## Duplicating piped data with tee
+---
+
+## Duplicating Piped Data with Tee
+
+### Description
+In this challenge, we need to solve the task by intercepting data from `/challenge/pwn` when passing it to `/challenge/college`. This allows us to see the data as it flows. We can accomplish this using the `tee` command, which duplicates data flowing through the command line.
+
+### Info / Stuff We Should Know
+- The `tee` command is used to read from standard input and write to standard output and files simultaneously.
+- It allows us to capture the output of a command while still passing it along to another command.
+
+### Step-by-Step Solution
+
+**Step 1: Intercept data from `/challenge/pwn` and pass it to `/challenge/college`.**
+```bash
+/challenge/pwn | tee intercepted_data | /challenge/college
 ```
-In this challenge we need to solve this challenge by intercepting data from the /challenge/pwn when passing it to /challenge/college
-This is to see the data as it flows. We can accomplish this using the Tee command. It duplicates data flowing through my command line.
 
-Hence we can use the command /challenge/pwn | tee intercepted_data | /challenge/college
-
-We can then cat intercepted_data. this then shows us how to use the command with the following text
-Usage: /challenge/pwn --secret [SECRET_ARG]
-
-SECRET_ARG should be "47BeXUu0"
-
-Hence we now do /challenge/pwn --secret "47BeXUu0"
-
-This does not work as we can only view it through the intercepted_data hence we again pass it through tee or just pipelining
-
-We now do /challenge/pwn --secret "47BeXUu0" | tee intercepted_data | /challenge/college
-we can also do /challenge/pwn --secret "47BeXUu0" | /challenge/college as its stated we can use tee just for debugging this time.
-
-Hence we get the flag
-
-Flag -> 47BeXUu0VbkmSbYCyVteOtoUJgt.dFjM5QDL4czN0czW
+**Step 2: View the contents of `intercepted_data` to find the secret argument.**
+```bash
+cat intercepted_data
 ```
+
+**Step 3: Use the secret argument in the command.**
+```bash
+/challenge/pwn --secret "47BeXUu0"
+```
+
+**Step 4: Pass the secret argument through `tee` again or just pipe it directly.**
+```bash
+/challenge/pwn --secret "47BeXUu0" | tee intercepted_data | /challenge/college
+```
+Or simply:
+```bash
+/challenge/pwn --secret "47BeXUu0" | /challenge/college
+```
+
+### Flag
+> 47BeXUu0VbkmSbYCyVteOtoUJgt.dFjM5QDL4czN0czW
+
 ![image](https://github.com/user-attachments/assets/c741457a-c526-4a61-a0cb-84d70a402710)
 
-## Writing to Multiple Programmes
-```
-In this challenge we can solve it using /challenge/hack, /challenge/the, and /challenge/planet, you’ll use tee along with process substitution. The goal is to take the output from /challenge/hack and pass it as input to both /challenge/the and /challenge/planet.
+---
 
-We can do this command /challenge/hack | tee >( /challenge/the ) >( /challenge/planet )
-/challenge/hack: This command generates the output you want to duplicate.
-|: The pipe operator sends the output of /challenge/hack to tee.
-tee: This command will take the output from /challenge/hack and duplicate it.
->( /challenge/the ): This process substitution allows the output of tee to be passed as input to /challenge/the.
->( /challenge/planet ): Similarly, this allows the output to also be passed as input to /challenge/planet.
+## Writing to Multiple Programs
 
-Flag -> kvgvRbZi1zsXve5bu_rkYuajnvD.dBDO0UDL4czN0czW
+### Description
+In this challenge, we can solve it using `/challenge/hack`, `/challenge/the`, and `/challenge/planet`. The goal is to take the output from `/challenge/hack` and pass it as input to both `/challenge/the` and `/challenge/planet` using `tee` along with process substitution.
+
+### Info / Stuff We Should Know
+- The `tee` command duplicates the output of a command, allowing it to be sent to multiple destinations.
+- Process substitution allows us to use the output of a command as input for another command in a way that the receiving command treats it as a file.
+- **Command Breakdown:**
+  - `/challenge/hack`: This command generates the output you want to duplicate.
+  - `|`: The pipe operator sends the output of `/challenge/hack` to `tee`.
+  - `tee`: This command takes the output from `/challenge/hack` and duplicates it.
+  - `>( /challenge/the )`: This process substitution allows the output of `tee` to be passed as input to `/challenge/the`.
+  - `>( /challenge/planet )`: Similarly, this allows the output to also be passed as input to `/challenge/planet`.
+
+### Step-by-Step Solution
+
+**Step 1: Run the hack command and duplicate its output.**
+```bash
+/challenge/hack | tee >( /challenge/the ) >( /challenge/planet )
 ```
+
+### Flag
+> kvgvRbZi1zsXve5bu_rkYuajnvD.dBDO0UDL4czN0czW
+
 ![image](https://github.com/user-attachments/assets/1b54d597-7f4a-4497-ac9d-252c558e16ec)
 
 ---
