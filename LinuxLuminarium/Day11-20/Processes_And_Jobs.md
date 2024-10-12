@@ -210,6 +210,198 @@ This will then output the flag as the process has been resumed. We then press en
 
 ---
 
+## Backgrounding Processes
+
+### Description
+In this challenge the objective was to suspend a running process using `Ctrl-Z` resume it in the background with the `bg` command and then launch another instance of the same process in the terminal. The challenge required you to ensure that one instance was running while the other was in the background.
+
+### Info / Stuff We Should Know
+- **What is bg?**: The `bg` command resumes a suspended process in the background. This allows the process to run while freeing up the terminal for additional commands.
+
+- **Process States**:
+  - **R**: Running
+  - **S**: Sleeping (waiting for input)
+  - **T**: Stopped (suspended with `Ctrl-Z`)
+  - **+**: Indicates that the process is in the foreground
+
+### Step-by-Step Solution
+
+**Command to run the challenge**:
+```bash
+/challenge/run
+```
+The output will indicate that another instance of the process is required:
+I'll only give you the flag if there's already another copy of me running *and not suspended* in this terminal... Let's check!
+I don't see a second me!
+
+To pass this level, you need to suspend me, resume the suspended process in the 
+background, and then launch a new version of me! You can background me with 
+Ctrl-Z (and resume me in the background with 'bg') or, if you're not ready to 
+do that for whatever reason, just hit Enter and I'll exit!
+
+**Command to suspend the process**:
+```plaintext
+Ctrl-Z
+```
+
+The output confirms that the process is suspended:
+[1]+  Stopped                 /challenge/run
+
+**Command to resume the process in the background**:
+```bash
+bg
+```
+This outputs:
+The process is now running in the background, allowing you to proceed with the next command.
+
+**Command to launch another instance**:
+```bash
+/challenge/run
+```
+
+This returns us the flag
+
+### Flag
+> IdOozWmM2Gomc_7H5IhTm6Pz3xI.ddDN4QDL4czN0czW
+
+![image](https://github.com/user-attachments/assets/c08e7b17-29b8-4816-86e0-8ff9db29fb2a)
+
+---
+
+## Foreground Running Processes
+
+### Description
+In this challenge, you are required to manage process states by suspending a running process, moving it to the background, and then bringing it back to the foreground without re-suspending it. This task demonstrates the ability to manipulate processes within the terminal effectively.
+
+### Info / Stuff We Should Know
+- **fg Command**: The `fg` command is used to bring a backgrounded process back into the foreground, allowing you to interact with it directly.
+
+### Step-by-Step Solution
+
+**1. Start the Challenge**:
+Launch the challenge with the following command:
+```bash
+/challenge/run
+```
+You will see the following prompt
+To pass this level, you need to suspend me, resume the suspended process in the background, and *then* foreground it without re-suspending it! You can background me with Ctrl-Z (and resume me in the background with 'bg') or, if you're not ready to do that for whatever reason, just hit Enter and I'll exit!
+
+**2. Suspend the Process**:
+
+```plaintext
+Ctrl-Z
+```
+
+**3. Resume the Process in the Background**:
+```bash
+bg
+```
+
+You will receive feedback:
+Yay, I'm now running in the background! Because of that, this text will probably overlap weirdly with the shell prompt. Don't panic; just hit Enter a few times to scroll this text out. After that, resume me into the foreground with 'fg'; I'll wait.
+
+**4. Bring the Background Process to the Foreground**:
+```bash
+fg
+```
+Upon successfully bringing the process to the foreground, the prompt will indicate:
+YES! Great job! I'm now running in the foreground. Hit Enter for your flag!
+this returns us our Flag
+
+
+### Flag
+
+> Mrq33iFHAJkG3TlftvBziRk2rNw.dhDN4QDL4czN0czW
+
+![image](https://github.com/user-attachments/assets/c3459d28-1a0f-4e43-86cc-f08e7afcb338)
+
+---
+
+## Starting Background Processes
+
+### Description
+In this challenge you will learn how to start a process in the background directly by appending an `&` to the command. This enables you to run tasks without occupying the terminal allowing you to execute additional commands while the background process runs.
+
+### Info / Stuff We Should Know
+- **Background Process**: A process that runs without occupying the terminal. You can continue to use the terminal for other commands.
+- **Starting a Process in Background**: To launch a process in the background, append an `&` at the end of the command.
+- **Process Confirmation**: When a command runs in the background it returns a job number and process ID (PID) confirming that it has started successfully.
+
+### Step-by-Step Solution
+
+**1. Start the Process in Foreground**:
+Initially, when you try to start the process without appending `&`, it will run in the foreground:
+```bash
+/challenge/run
+```
+You will receive a message indicating that the command is running in the foreground:
+You've started me in the foreground! You must start me in the background (by appending '&' to the command) to get the flag!
+
+
+**2. Start the Process in the Background**:
+```bash
+/challenge/run &
+```
+
+The output will confirm that the process has started in the background, showing something like:
+
+Yay, you started me in the background! Because of that, this text will probably overlap weirdly with the shell prompt, but you're used to that by now...
+
+Anyways! Here is your flag!
+returning our flag :D
+
+### Flag
+
+> wtLqbAq3De7TQ_NgM1XxWeV0SH6.dlDN4QDL4czN0czW
+
+![image](https://github.com/user-attachments/assets/f2537416-0fd8-4084-8508-b391ff623e0e)
+
+---
+
+## Process Exit Codes Write-up
+
+### Description
+
+In this challenge you need to retrieve the exit code from the command `/challenge/get-code` and then use that exit code as an argument for the command `/challenge/submit-code`.
+we can find out the exit code for the last command by doing '$?' however we need to pass it literally as an argument.
+
+### Info / Stuff We Should Know
+
+- **Exit Codes**: Every command executed in the shell returns an exit code upon completion. Typically:
+  - `0`: Indicates success.
+  - Non-zero: Indicates failure (commonly `1`, but can vary).
+- **Accessing Exit Code**: The exit code of the last executed command can be accessed using the special variable `$?`.
+
+### Step-by-step Solution
+
+1. **Run the Command to Get the Exit Code**:
+   ```bash
+   hacker@processes~process-exit-codes:~$ /challenge/get-code
+   Exiting with an error code!
+   ```
+   
+2. **Submit the Exit Code**:
+   ```bash
+   hacker@processes~process-exit-codes:~$ /challenge/submit-code $?
+   ```
+
+### Flag
+
+> 8paMl6mZi7O5by3F73T9ygVSTjB.dljN4UDL4czN0czW
+
+![image](https://github.com/user-attachments/assets/422a3790-1bbc-4c98-a33a-3c36284963e9)
+
+---
+
+
+
+
+
+
+
+
+
+
 
 
 
