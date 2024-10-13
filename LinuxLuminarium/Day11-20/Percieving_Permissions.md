@@ -191,7 +191,7 @@ The flag will be displayed, completing the challenge.
 
 ---
 
-## Executable Permissions Challenge
+## Executable Permissions
 
 ### Description
 In this challenge, we explored the concept of execute permissions in Linux. The objective was to make the `/challenge/run` program executable so that we could successfully run it and retrieve the flag.
@@ -241,7 +241,7 @@ Upon successful execution the output displayed the flag
 
 ---
 
-## Executable Permissions Challenge
+## Permission Tweaking Practice
 
 ### Description
 In this challenge participants are tasked with changing the permissions of the `/challenge/pwn` file in specific ways through a series of rounds. Success in eight consecutive rounds allows the participant to modify the permissions of the `/flag` file to make it readable.
@@ -459,7 +459,7 @@ Also p.s there will be no ss of terminal this was way too long. D:
 
 ---
 
-## SUID
+## The SUID Bit
 
 ### Description
 In this challenge, participants are tasked with adding the Set User ID (SUID) permission to the `/challenge/getroot` program. This allows the program to execute with the permissions of its owner (root), enabling users to spawn a root shell to access the flag. The SUID mechanism is commonly used in system administration tools like `su` and `sudo`.
