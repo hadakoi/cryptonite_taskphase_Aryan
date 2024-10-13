@@ -459,7 +459,7 @@ Also p.s there will be no ss of terminal this was way too long. D:
 
 ---
 
-## Set User ID (SUID) Bit Challenge
+## SUID
 
 ### Description
 In this challenge, participants are tasked with adding the Set User ID (SUID) permission to the `/challenge/getroot` program. This allows the program to execute with the permissions of its owner (root), enabling users to spawn a root shell to access the flag. The SUID mechanism is commonly used in system administration tools like `su` and `sudo`.
