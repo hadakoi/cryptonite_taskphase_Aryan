@@ -87,10 +87,131 @@ This returns the flag.
 
 ---
 
+## Adding Commands
 
+### Description
+In this challenge, you need to create a shell script named `win` that will be executed by the `/challenge/run` program. The objective is to ensure that your `win` command can access the `cat` command to read the flag file. Since `/challenge/run` runs as root, it will call your `win` command, which should simply output the contents of the flag file.
 
-First Method. ![image](https://github.com/user-attachments/assets/29cd07f3-0e00-49b5-b4d5-fdeed1c45e38)
-Second Method. ![image](https://github.com/user-attachments/assets/59bd2284-3ce5-4502-8144-13287c30325c)
-Third Method. ![image](https://github.com/user-attachments/assets/3f128c28-f92a-481c-bdec-b03516a4095e)
+To achieve this, you will manipulate the `PATH` environment variable so that your shell can locate both the `win` command and the `cat` command. However, if you overwrite the `PATH` variable with only the directory containing `win`, the command will not be able to find `cat`. You will need to choose your method carefully.
+
+### Info / Stuff We Should Know
+- **PATH Variable**: The `PATH` variable in a shell specifies the directories the shell searches for executable files. It consists of a list of directory paths separated by colons (`:`).
+- **Finding Executables**: To find where executables such as `cat` are located, you can check the current `PATH` variable and navigate through the directories listed.
+- **Using Shell Built-ins**: The `read` command is a built-in function in Bash that can read data from files. It does not depend on the `PATH`, so it can be used to directly access the flag file without needing to find `cat`.
+
+Here’s the revised hint explanation with three sections for each method based on the provided hints:
+
+### Step-by-Step Solution
+
+#### Hint Explanation
+
+##### Method 1: Locating the `cat` Command
+To successfully invoke the `cat` command from your `win` script, you first need to determine its absolute path. This can be done by using the `which` command, which reveals where the `cat` program is located on the filesystem. The `cat` command must reside in a directory listed in your `PATH` variable. You can check your `PATH` using `echo $PATH` and then search through its entries (separated by `:`) to find the directory containing `cat`. After identifying the absolute path, you can reference it directly in your `win` script.
+
+##### Method 2: Adding the Current Directory to `PATH`
+Instead of searching for the `cat` command, you can modify the `PATH` variable to include your current directory, where your `win` script will be located. By appending `./` to the existing `PATH`, the shell will be able to find and execute your `win` script directly. This approach allows you to create a simple `win` script that directly calls `cat` without needing to specify its absolute path, as long as the script and the `cat` command exist in the same `PATH` hierarchy.
+
+##### Method 3: Using `read` to Access the Flag
+If you want to avoid relying on the `cat` command altogether, you can use the built-in `read` functionality in Bash to access the flag file. The `read` command allows you to read data from a file into a variable, and since it's a shell built-in, it is not affected by the `PATH` variable. By redirecting input from `/flag` into a variable (e.g., `flag`) and then echoing that variable, you can access the contents of the flag file without any dependencies on external commands.
+
+---
+
+### Method 1: Locating the `cat` Command
+
+1. **Find the Location of `cat`**:
+   ```bash
+   which cat
+   /run/workspace/bin/cat
+   ```
+   This command reveals the absolute path to the `cat` executable, which will be useful for invoking it from your `win` script.
+
+2. **Create the `win` Script**:
+   ```bash
+   echo '/usr/bin/cat /flag' > win
+   ```
+   This command writes the script `win`, which will execute `cat` to read the `/flag` file.
+
+3. **Update the `PATH`**:
+   ```bash
+   export PATH=$PATH:./
+   ```
+   This command appends the current directory (`./`) to the existing `PATH`, allowing the shell to find your `win` script.
+
+4. **Execute the Challenge**:
+   ```bash
+   /challenge/run
+   ```
+   
+   This returns the Output.
+
+---
+
+### Method 2: Adding the Current Directory to `PATH`
+
+1. **Update the `PATH`**:
+   ```bash
+   export PATH=$PATH:./
+   ```
+   This command adds the current directory to the `PATH`, allowing your shell to find the `win` script.
+
+2. **Create the `win` Script**:
+   ```bash
+   echo 'cat /flag' > win
+   ```
+   This command creates a script named `win` that directly uses the `cat` command to read the `/flag` file.
+
+3. **Execute the Challenge**:
+   ```bash
+   /challenge/run
+   ```
+
+   This returns the Output.
+
+---
+
+### Method 3: Using `read` to Access the Flag
+1. **Create the `win` Script with `read`**:
+   ```bash
+   echo 'read flag < /flag; echo $flag' > win
+   ```
+   This command writes a script that reads the flag directly into a variable named `flag` and then echoes its value.
+
+2. **Update the `PATH`**:
+   ```bash
+   export PATH=$PATH:./
+   ```
+   Again, this command adds the current directory to the `PATH`, allowing your shell to find the `win` script.
+
+3. **Execute the Challenge**:
+   ```bash
+   /challenge/run\
+   ```
+   
+   This returns the Output.
+
+---
+
+### Flag
+
+> 8yZw6vRkaP4QmuIA7I4fAtanHGt.dZzNyUDL4czN0czW
+
+First Method. 
+
+![image](https://github.com/user-attachments/assets/8c1044f2-8856-4bd6-aeb3-726e9cf47c5b)
+
+<br>
+
+Second Method. 
+
+![image](https://github.com/user-attachments/assets/0d8a8112-5369-4052-974f-6af7d1f13911)
+
+<br>
+
+Third Method.
+
+![image](https://github.com/user-attachments/assets/46ad3e4c-4fbd-48df-8add-89865e2119a5)
+
+---
+
 
 
