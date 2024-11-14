@@ -28,19 +28,19 @@ The result is `10`, which is the answer to the modular exponentiation problem.
 
 ## 2. Public Keys and the Modulus `N`
 
-RSA encryption uses a pair of large prime numbers, \(p\) and \(q\), to compute \(N\):
+RSA encryption uses a pair of large prime numbers (p) and (q) to compute (N):
 
 ```
 N = p * q
 ```
 
-The product \(N\) forms part of the **public key** and is used in both encryption and decryption. The other part of the public key is the **public exponent**, usually denoted \(e\), which is commonly set to **65537** because it allows efficient computation while maintaining security.
+The product (N) forms part of the **public key** and is used in both encryption and decryption. The other part of the public key is the **public exponent**, usually denoted (e), which is commonly set to **65537** because it allows efficient computation while maintaining security.
 
-Together, \((N, e)\) constitutes the public key, which anyone can use to encrypt messages.
+Together, ((N, e)) constitutes the public key, which anyone can use to encrypt messages.
 
 ## 3. Euler’s Totient Function `φ(N)`
 
-To generate the private key \(d\), we use **Euler's Totient Function** \(φ(N)\), defined for RSA as:
+To generate the private key (d), we use **Euler's Totient Function** (φ(N)), defined for RSA as:
 
 ```
 φ(N) = (p - 1) * (q - 1)
@@ -50,35 +50,35 @@ This value is critical for ensuring that the encryption and decryption operation
 
 ## 4. Private Key `d`
 
-The private key \(d\) is calculated as the **modular inverse** of \(e\) with respect to \(φ(N)\):
+The private key (d) is calculated as the **modular inverse** of (e) with respect to (φ(N)):
 
 ```
 d ≡ e^(-1) mod φ(N)
 ```
 
-This means that \(d\) is chosen so that:
+This means that (d) is chosen so that:
 
 ```
 e * d ≡ 1 mod φ(N)
 ```
 
-Only with this private key \(d\) can we reverse the encryption operation.
+Only with this private key (d) can we reverse the encryption operation.
 
 ## 5. Encryption Process
 
-To encrypt a message \(m\) using the public key \((N, e)\):
-1. Convert the message \(m\) into an integer.
-2. Compute the ciphertext \(c\) using:
+To encrypt a message (m) using the public key ((N, e)):
+1. Convert the message (m) into an integer.
+2. Compute the ciphertext (c) using:
 
    ```c = m^e mod N```
 
-3. Transmit \(c\) as the encrypted message.
+3. Transmit (c) as the encrypted message.
 
 ### Example
 Given:
-- \(N = 882564595536224140639625987659416029426239230804614613279163\)
-- \(e = 65537\)
-- Message \(m = 12\)
+- (N = 882564595536224140639625987659416029426239230804614613279163)
+- (e = 65537)
+- Message (m = 12)
 
 Encryption:
 
@@ -94,18 +94,18 @@ print("Ciphertext:", c)
 
 ## 6. Decryption Process
 
-To decrypt a ciphertext \(c\) using the private key \(d\):
-1. Compute the original message \(m\) with:
+To decrypt a ciphertext (c) using the private key (d):
+1. Compute the original message (m) with:
 
    ```m = c^d mod N```
 
-2. The result \(m\) is the decrypted plaintext.
+2. The result (m) is the decrypted plaintext.
 
 ### Example
 Given:
-- Ciphertext \(c = 77578995801157823671636298847186723593814843845525223303932\)
-- \(N = 882564595536224140639625987659416029426239230804614613279163\)
-- Previously calculated \(d = 121832886702415731577073962957377780195510499965398469843281\)
+- Ciphertext (c = 77578995801157823671636298847186723593814843845525223303932)
+- (N = 882564595536224140639625987659416029426239230804614613279163)
+- Previously calculated (d = 121832886702415731577073962957377780195510499965398469843281)
 
 Decryption:
 
@@ -119,7 +119,7 @@ m = pow(c, d, N)
 print("Decrypted message:", m)
 ```
 
-The output of \(m\) will be the original message before encryption.
+The output of (m) will be the original message before encryption.
 
 ## 7. RSA Signatures
 
@@ -164,8 +164,8 @@ RSA encryption allows for secure communication by using a **public key** for enc
 - **Public Key (N, e)**: Used for encrypting messages.
 - **Private Key (d)**: Used for decrypting messages, calculated using Euler’s Totient.
 - **Message (m)**: Represents the original message.
-- **Modulo \(N\)**: \(p * q\).
-- **Totient Function**: \(φ(N) = (p - 1) * (q - 1)\).
-- **Private key formula**: \(d ≡ e^{-1} mod φ(N)\).
-- **Encryption Formula**: \(c = m^e mod N\).
-- **Decryption Formula**: \(m = c^d mod N\).
+- **Modulo (N)**: (p * q).
+- **Totient Function**: φ(N) = (p - 1) * (q - 1).
+- **Private key formula**: d ≡ e^{-1} mod φ(N).
+- **Encryption Formula**: c = m^e mod N.
+- **Decryption Formula**: m = c^d mod N.
