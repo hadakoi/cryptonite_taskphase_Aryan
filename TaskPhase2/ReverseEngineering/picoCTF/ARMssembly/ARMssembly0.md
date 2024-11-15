@@ -292,7 +292,7 @@ func1:
 
 **Once we have returned:**
 
-```
+```asm
 mov	w1, w0
 	adrp	x0, .LC0
 	add	x0, x0, :lo12:.LC0
