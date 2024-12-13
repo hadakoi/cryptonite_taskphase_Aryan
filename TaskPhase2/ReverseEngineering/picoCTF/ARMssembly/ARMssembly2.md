@@ -9,7 +9,7 @@ Flag format: picoCTF{XXXXXXXX} -> (hex, lowercase, no 0x, and 32 bits. ex. 56142
 
 Looking at the main function first: 
 
-``` 
+``` asm
 main: 
 
 	stp	x29, x30, [sp, -48]!
@@ -40,7 +40,7 @@ main:
 
 
 Now Looking at the functions: 
-```
+```asm
 func1:
 	sub	sp, sp, #32 // space for variables 
 	str	w0, [sp, 12] // store the w0 into (sp + 12)
