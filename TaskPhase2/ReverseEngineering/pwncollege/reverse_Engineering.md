@@ -121,7 +121,7 @@ Luckily ghidra is provided so lets check that out.
 
 Upon opening it in ghidra we find the main strcmp and what its comparing it to if i double clicked this it will show me the assembly for this. And in the assembly section i found ``chhjb`` which should be our key. 
 
-
+![image](https://github.com/user-attachments/assets/ef6ac62b-93a7-43c1-a9a4-9fe745b446c2)
 
 Entering this returns our flag.
 
@@ -269,17 +269,15 @@ Reverse engineer this challenge to find the correct license key, but your input 
 Now like the last ``1.1`` challenge we realise that it does now show the exchange index values but rather tells us directly that we are long. it does not even show the key.
 
 
-So lets throw this into ghidra. Looking first to see where the exchanging the indexes is we do not find much except a simple c code
+So lets throw this into IDA
 
+Looking at this we realise that buff our input string has can take upto 4 bytes ( 4 hex chars ) and v5 which comes right after will take the overflow
 
-```c
-read(0,&local_16,5);
-uVar1 = local_16._1_1_;
-local_12 = CONCAT11(local_12._1_1_,uVar1);
+![image](https://github.com/user-attachments/assets/59442757-7f06-4904-9a1d-bc2bc4193008)
 
-```
+Now looking at the swap
 
-However looking at the assembly through IDA it tells a different story.
+![image](https://github.com/user-attachments/assets/59442757-7f06-4904-9a1d-bc2bc4193008)
 
 ```pseudocode
   buf = 0;
@@ -291,7 +289,7 @@ However looking at the assembly through IDA it tells a different story.
   LOBYTE(v5) = v3;
 ```
 
-From this we can understand that v3 is first taking the first index of the buf string that we are entering which is the second byte.
+We can understand that v3 is first taking the first index of the buf string that we are entering which is the second byte.
 We then seem to store the value in v5 in the buf then finally store v3 into the value of v5. 
 Why this is working I believe its because buf can only hold 4 characters and as v5 was next declared thats where it is overflowed into the last character. As such when using LOBYTE of v5 it accesses the first index of v5 which is the 4th index of the entire string and the last character
 
@@ -299,7 +297,9 @@ Hence we can conclude we are exchanging the 1st index and the last index.
 
 back to ghidra
 
-``jvsyo`` We can also see this in the cmp.
+![image](https://github.com/user-attachments/assets/3204ef6f-819b-4c9a-a415-b6e605cd5809)
+
+``jvsyo`` We can  see this in the cmp.
 
 hence
 
@@ -482,6 +482,8 @@ Replaces the byte at index 3 with the value of uVar1
 
 Hence essentially just swapping symmetrically and reversing it.
 
+![image](https://github.com/user-attachments/assets/982d287d-64fa-4bd1-8499-f76da6227f9f)
+
 We also know what it is compared against which is: ``zmsec`` which we can see from ghidra.
 
 So reversing the bits how it was shown above we get ``cesmz``
@@ -627,6 +629,8 @@ Doing so i find main then the strcmp and find the str it is comparing with.
 
 Now this str is already in ascending ascii order which is ``akvxz`` hence i can just enter it getting the flag
 
+![image](https://github.com/user-attachments/assets/e86b246f-8407-4a60-977a-c78a3b49b34d)
+
 ```shell
 hacker@reverse-engineering~level4-1:~$ /challenge/./babyrev-level-4-1 
 ###
@@ -660,7 +664,6 @@ pwn.college{0gNVybz8KLWQP8CSI2Q5qUCLtNp.0FO1IDL4czN0czW}
 ```
 Reverse engineer this challenge to find the correct license key, but your input will be modified somehow before being compared to the correct key.
 ```
-
 
 Launching the challenge and ofc inputting ``test`` again we do'nt get the flag yet.
 
@@ -780,7 +783,12 @@ Now like the previous .1 they do not provide an encoded version of the flag nor 
 
 Now upon examining with ghidra we can see each character is being XORed with 0x49 which is 73 in decimal.
 
+![image](https://github.com/user-attachments/assets/833f954c-6aba-4a41-9c94-cf2f0d57a4e4)
+
+
 Now we need to find what string it is being compared to.
+
+![image](https://github.com/user-attachments/assets/1d2297de-249d-4be3-871a-cec9b8f6d821)
 
 which is suprisingly ``#8:=\"`` We can then decode this XORing each character with 0x49 which decodes is ``jqstk``
 
@@ -972,23 +980,12 @@ This is essentially a bubblesort algorithim that is implmented.
 
 We also see some assembly on the left side that relates to this statement ``uVar1 = local_28._5_1_;``
 
-```
-00101555 0f b6 45 e5     MOVZX      EAX,byte ptr [RBP + local_28+0x5]
-00101559 88 45 d4        MOV        byte ptr [RBP + local_34],AL
-0010155c 0f b6 45 eb     MOVZX      EAX,byte ptr [RBP + local_20+0x3]
-00101560 88 45 d5        MOV        byte ptr [RBP + local_33],AL
-00101563 0f b6 45 d5     MOVZX      EAX,byte ptr [RBP + local_33]
-00101567 88 45 e5        MOV        byte ptr [RBP + local_28+0x5],AL
-0010156a 0f b6 45 d4     MOVZX      EAX,byte ptr [RBP + local_34]
-0010156e 88 45 eb        MOV        byte ptr [RBP + local_20+0x3],AL
-```
-This is essentially swapping values between different local variables swapping the values back then forth.
+Looking at the rest of the c programme we just reverse the string set twice.
+so now we know that it basically does nothing to the string in the end other than sorting it. 
 
-In the first reverse: the Byte from RBP + local_28 + 0x5 is moved to RBP + local_34 and Byte from RBP + local_20 + 0x3 is moved to RBP + local_33
+![image](https://github.com/user-attachments/assets/f1d647c0-2f32-41ee-9989-541752d42f20)
 
-In the Second Reverse: Now, the byte at RBP + local_33 (which was originally from RBP + local_20 + 0x3) is moved back to RBP + local_28 + 0x5. Finally, the byte at RBP + local_34 (which was originally from RBP + local_28 + 0x5) is moved back to RBP + local_20 + 0x3.
-
-so now we know that it basically does nothing to the string in the end other than sorting it. Looking at the string it compares it to abceemjllllfnotww which is sorted already so we can just input this. And this returns us the flag.
+Looking at the string it compares it to abceemjllllfnotww which is sorted already so we can just input this. And this returns us the flag.
 
 ```shell
 hacker@reverse-engineering~level6-1:/challenge$ ./babyrev-level-6-1 
@@ -1257,6 +1254,8 @@ Like before lets first put this into an editor this time i tried using IDA
 
 I then get to see the entire encoding process
 
+
+
 ```c
   int v3; // eax
   char v4; // [rsp+26h] [rbp-4Ah]
@@ -1484,7 +1483,7 @@ pwn.college{MF329KyvLrXXbejIv6jQjZBwCSx.0FN2IDL4czN0czW}
 Reverse engineer this challenge to find the correct license key, but your input will be modified somehow before being compared to the correct key.
 ```
 
-First starting the challenge up and inputing``test`` we get the mangling methods
+First starting the challenge up and inputing ``test`` we get the mangling methods
 
 ```shell
 hacker@reverse-engineering~level8-0:/challenge$ ./babyrev-level-8-0 
@@ -2109,6 +2108,8 @@ So the first thing i do is shove the thing into ghidra.
 
 My first thought was how to get to the win condition and i found the assembly and addresses for it easily on ghidra.
 
+![image](https://github.com/user-attachments/assets/243fd57f-483f-4b59-9a07-3df735160d70)
+
 ``001028e3 75 14           JNZ        LAB_001028f9``
 
 What this means is if our **comparison value ends up as not 0** we jump 14 hex ahead to ``001028f9`` Now as we have a md5 hash whatever we input
@@ -2119,6 +2120,15 @@ so to make this very easy why dont i just make it give me the win condition if o
 
 Lets look at the conditional opcodes for jumps that i found here [Jumps](http://www.unixwiz.net/techtips/x86-jumps.html)
 
+![image](https://github.com/user-attachments/assets/402d3458-eee6-4b68-9402-eccd7eb36d4c)
+
+We see that this statement comes under short jump codes and not near jump codes.
+
+**NOTE:**
+1. **Short jump op codes** are used for jumps within a small range.
+2. **Near jump op codes** allow jumps to a larger range.
+3. They also have different opcode formats
+   
 Now the opcode of JNZ is 75. However the opcode 74 is ``JE`` also known as if the value is zero it jumps to the condition. Now why does this work exactly?
 
 Well first off our output is almost always never 0. Now the jump only happens when our input is 0. Meaning we get to enter the if statement hence winning :D
@@ -2204,6 +2214,8 @@ This seems to be a similar type of challenge so I shove it into ghidra.
 
 Im able to see a similar win function with the same if condition as before so should't I just exploit it just the same?
 
+![image](https://github.com/user-attachments/assets/2a7cf5f4-23d2-4b9d-8389-69b040c42bbd)
+
 The address where the jump is happening on is ``00101789 75 14           JNZ        LAB_0010179f``.
 
 ```shell
@@ -2269,8 +2281,6 @@ Now unlike the last challenge where we had 5 byte changes it seems as though we 
 So lets first throw da programme into ghidra now like before i look for the jump condition here.
 
 ``      00102563 75 14           JNZ        LAB_00102579``
-
-
 
 ```shell
 hacker@reverse-engineering~level10-0:/challenge$ ./babyrev-level-10-0 
@@ -2581,22 +2591,26 @@ pwn.college{QQEDX_jb21wj1Xk1yKUZjJlOfPX.0VM3IDL4czN0czW}
   iVar1 = memcmp(local_68,local_58,0x10);
 ```
 
-Like before this will never return 0. But we cannot use the same soln as the condition and assembly jumps are different
+Like before this will never return 0. 
+
+![image](https://github.com/user-attachments/assets/be168059-7c87-422c-b718-4f382e029c42)
 
 ```
 0010220d 85 c0           TEST       EAX,EAX
 0010220f 0f 85 e1        JNZ        LAB_001022f6
          00 00 00
 ```
-
 Over here we know that it will never be 0 hence it will always jump. Trying to change this to 74 causes a seg fault.
+
+hence we cannot use the same soln as the condition and assembly jumps are different
 
 This is because the JNZ is not using its regular ``75`` encoding but rather its ``0f 85`` which is also known as near jump. Meaning if we want to convert this jump We must use the JE code for Near jump as well which is ``0f 84`` 
 
 Now ``0010220f`` essentially is the ``0f`` part whereas ``00102210`` accesses the 85 part Meaning this is what we need to access and change.
 
+Now that we know how to get through the first if statement the second if statement is a bit easier same as before challs
 
-Now that we know how to get through the first if statement the second if statement is a bit easier same as before 
+![image](https://github.com/user-attachments/assets/5b093dc0-099a-48d6-a69d-90b75be58404)
 
 ```
 001022f0 85 c0           TEST       EAX,EAX
