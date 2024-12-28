@@ -1165,6 +1165,8 @@ Trying to send the special characters as is does not work.
 
 However after asking advice on the pwncollege discord server and pushing gpt I was guied in the right direction on how to give these things as input.
 
+![image](https://github.com/user-attachments/assets/7fc8c139-bc6d-427a-ba6a-b8b8caac47ec)
+
 From here I just asked gpt to make the command on what he told which is ``echo -ne "\xa7\xb7\xbe\xd7\xa\xa3\x11\x13\xb1\x66\xc5\xc0\x1c\xae\x67\x1b\x72\x78\x1b\xc2\x7b\xa8\xb4\x1b\x14" | ./babyrev-level-7-0``
 
 And solved.
