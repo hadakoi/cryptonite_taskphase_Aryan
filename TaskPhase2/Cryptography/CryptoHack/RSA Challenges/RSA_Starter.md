@@ -6,7 +6,7 @@
 
 ### Challenge
 
-Image1
+![image](https://github.com/user-attachments/assets/06d96683-6f31-4f55-97d9-1fa406a3a902)
 
 ### Solving
 
@@ -40,7 +40,7 @@ Output:
 
 ### Challenge
 
-Image2
+![image](https://github.com/user-attachments/assets/d9554ee4-7f2f-431a-9c68-f08c5ee85415)
 
 ### Solving
 
@@ -62,7 +62,7 @@ print(pow(12, 65537, 17*23))
 
 ### Challenge
 
-Image3
+![image](https://github.com/user-attachments/assets/d8d7687d-eadd-4c2b-9e90-93b158e673a1)
 
 ### Solving
 
@@ -89,7 +89,7 @@ Output:
 
 ### Challenge
 
-Image4
+![image](https://github.com/user-attachments/assets/63b50a70-b78f-4564-b7f3-7a9154a16a55)
 
 ### Solving
 
@@ -116,7 +116,7 @@ print(pow(e, -1, toit))
 
 ### Challenge
 
-Image5
+![image](https://github.com/user-attachments/assets/94189ee0-998c-4f50-b554-65213a38e49c)
 
 ### Solving
 
@@ -142,7 +142,7 @@ print(pow(c, d, N))
 
 ### Challenge
 
-Image6
+![image](https://github.com/user-attachments/assets/e26ce743-354c-44f2-b9fa-a9d26fed1b0c)
 
 TextFile Provided:
 
