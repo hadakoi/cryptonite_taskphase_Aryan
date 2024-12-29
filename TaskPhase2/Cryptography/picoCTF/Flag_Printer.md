@@ -75,23 +75,18 @@ Which is why we come to the method of Lagrange's Interpolation method.
 
 This is where **yi** are known as the values at **xi**
 
-
-
-
 The general formula for the Lagrange polynomial is:
 
-Image1
+![WhatsApp Image 2024-12-30 at 02 27 28_772fbbf5](https://github.com/user-attachments/assets/a47cb026-cbd8-446b-b4c0-0b8c2a918865)
 
 **Li(x)** are the Lagrange basis polynomials, defined as
 
-Image2
+![WhatsApp Image 2024-12-30 at 02 27 37_b56a6efd](https://github.com/user-attachments/assets/f6007319-8560-4440-8ccc-f3265fc6a7c2)
 
 For each data point **(xi, yi)**, the Lagrange basis polynomial Li(x) is calculated. Then, the final polynomial P(x) is the weighted sum of these basis polynomials. Here's an example process: 
 
 To calculate this Polynomial example
 Let’s say we have three points: **(x_0, y_0) = (1, 2), (x_1, y_1) = (2, 3), (x_2, y_2) = (3, 5)**
-
-Image3
 
 Now looking online for a way to use these commands in sage we find the **fast_interpolate** command
 ```python
@@ -142,9 +137,11 @@ It then outputs the coefficients for graphical reference.
 
 4. Then put to the real test
 
-5. Finally it outputs a bmp file which we can view as an Image 
+5. Finally it outputs a bmp file which we can view as an Image
 
-Why this is even a question idk give this to the mnc kids Pls
+![image](https://github.com/user-attachments/assets/7835a746-51e8-409c-ab04-c8fa0bac2f45)
+
+This question should not exist ;-;
 
 (I hate meths)
 
