@@ -86,9 +86,13 @@ The general formula for the Lagrange polynomial is:
 For each data point **(xi, yi)**, the Lagrange basis polynomial Li(x) is calculated. Then, the final polynomial P(x) is the weighted sum of these basis polynomials. Here's an example process: 
 
 To calculate this Polynomial example
-Let’s say we have three points: **(x_0, y_0) = (1, 2), (x_1, y_1) = (2, 3), (x_2, y_2) = (3, 5)**
+Let’s say we have three points: **(x_0, y_0) = (1, 2), (x1, y1) = (2, 3), (x2, y2) = (3, 5)**
 
-Now looking online for a way to use these commands in sage we find the **fast_interpolate** command
+![image](https://github.com/user-attachments/assets/c6238c1c-57c0-4dec-ac4b-226fdb6394ab)
+
+
+I found quicker ways to solve linear system of equations using fast interpolation method found on stack overflow that uses a tree to solve large systems of equations
+
 ```python
 def _fast_interpolate(weights, tree):
     if len(tree) == 1:
