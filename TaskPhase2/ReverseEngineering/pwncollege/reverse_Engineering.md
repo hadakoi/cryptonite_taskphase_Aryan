@@ -2654,12 +2654,10 @@ Checking the received license key!
 You win! Here is your flag:
 pwn.college{YBTeIvs46sB09K-EK1GySKS-p-w.0lM3IDL4czN0czW}
 
-
-hacker@reverse-engineering~level11-1:/challenge$
 ```
 
 ### Flag
 
-> hacker@reverse-engineering~level11-1:/challenge$
+> pwn.college{YBTeIvs46sB09K-EK1GySKS-p-w.0lM3IDL4czN0czW}
 
 ---
