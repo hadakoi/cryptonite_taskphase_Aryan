@@ -6,7 +6,7 @@
 
 ### Challenge
 
-Image1
+![image](https://github.com/user-attachments/assets/2eec6b47-fda2-48a8-a6b4-cac1d5facd27)
 
 ### Solving
 
@@ -31,7 +31,7 @@ print(pow(209, -1, 991))
 
 ### Challenge
 
-Image2
+![image](https://github.com/user-attachments/assets/a4bade9f-51b4-4b3b-ae30-f62214b6a893)
 
 ### Solving
 
@@ -83,7 +83,7 @@ print(f"Smallest primitive element g = {g}")
 
 ### Challenge
 
-Image3
+![image](https://github.com/user-attachments/assets/9fdb8c8e-d692-429d-89d2-3705889711c5)
 
 ### Solving
 
@@ -106,7 +106,7 @@ print(pow(g, a, p))
 
 ### Challenge
 
-Image4
+![image](https://github.com/user-attachments/assets/1f788f3c-ca10-40db-83be-8a936ba8a82a)
 
 ### Solving
 
@@ -130,7 +130,7 @@ print(pow(A, b, p))
 
 ### Challenge
 
-Image
+![image](https://github.com/user-attachments/assets/9c9205d0-c346-40ad-bf91-cf5b45d90052)
 
 source.py
 ```python
