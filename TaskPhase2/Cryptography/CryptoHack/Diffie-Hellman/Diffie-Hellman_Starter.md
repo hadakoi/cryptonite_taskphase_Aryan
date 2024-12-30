@@ -266,5 +266,5 @@ Running this we get the flag.
 
 5. **Symmetric Key Derivation**: After computing the shared secret a symmetric key for encryption (like AES) is derived using a hash function (e.g., SHA1) to generate a fixed-length key from the shared secret. This key is then used to encrypt or decrypt messages between parties.
 
-6. **AES Encryption/Decryption**:  ``Key=SHA-1(shared_secret`` to create the key for encryption and decryption. FLAG = 
+6. **Encryption/Decryption**:  ``Key=SHA-1(shared_secret`` to create the key for encryption and decryption. 
 
