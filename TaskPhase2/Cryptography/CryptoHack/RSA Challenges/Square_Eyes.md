@@ -2,7 +2,7 @@
 
 ## Challenge
 
-Image
+![image](https://github.com/user-attachments/assets/fb948884-6d4e-450f-8c2f-de8fb4ea2ce6)
 
 txt file:
 ```
