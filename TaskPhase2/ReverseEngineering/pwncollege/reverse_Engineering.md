@@ -2539,9 +2539,10 @@ pwn.college{QQEDX_jb21wj1Xk1yKUZjJlOfPX.0VM3IDL4czN0czW}
 ### Solving
 
 ```
-
+Reverse engineer this challenge to find the correct license key, but your input will be modified somehow before being compared to the correct key. This challenge allows you to patch 2 bytes in the binary, but performs an integrity check afterwards.
 ```
 
+We first shove it into ghidra and examine the code.
 ```c
   local_10 = *(undefined8 *)(in_FS_OFFSET + 0x28);
   setvbuf(stdin,(char *)0x0,2,0);
