@@ -2,7 +2,7 @@
 
 ### Challenge
 
-Image
+![image](https://github.com/user-attachments/assets/d19d86e4-1920-4cfe-945a-661d22f4c986)
 
 ### Solving
 
