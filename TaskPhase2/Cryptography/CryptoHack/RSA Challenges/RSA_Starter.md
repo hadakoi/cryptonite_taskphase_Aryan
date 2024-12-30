@@ -188,4 +188,7 @@ RSA encryption allows for secure communication by using a **public key** for enc
 - **Private key formula**: ``d ≡ e^{-1} % φ(N)``
 - **Encryption Formula**: ``c = m^e % N``
 - **Decryption Formula**: ``m = c^d % N``
-- **Signing a message**: ``S = hash^d % n``
+- **Signing a message**: ``S = digest^d % n``
+- **Reverting the Sign**: ``S^e % n = digest``
+
+*important*: If the digest after reverting the signing of the message is not the same as the previous message you know it has not been signed properly.
