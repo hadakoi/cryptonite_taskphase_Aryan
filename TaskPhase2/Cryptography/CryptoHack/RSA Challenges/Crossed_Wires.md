@@ -2,7 +2,7 @@
 
 ## Challenge
 
-Image
+![image](https://github.com/user-attachments/assets/75dbca38-9cae-49bd-ab01-2b8b77932c30)
 
 source.py
 ```python
