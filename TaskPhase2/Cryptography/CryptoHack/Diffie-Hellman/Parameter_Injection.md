@@ -2,6 +2,8 @@
 
 ## Challenge
 
+![image](https://github.com/user-attachments/assets/76865a66-479f-435c-bc42-208d3676c5b0)
+
 ## Method
 
 Upon starting up the server and multiple testing we can realise multiple things:
@@ -60,10 +62,11 @@ def decrypt_flag(shared_secret: int, iv: str, ciphertext: str):
     else:
         return plaintext.decode('ascii')
 
-# Send random info to Bob and ignore answer
+
 p = remote("socket.cryptohack.org", 13371)
 p.readline()
 
+# Send random info to Bob and ignore answer
 data = {"p":"0x01", "g":"0x01", "A":"0x01"}
 p.sendline(json.dumps(data).encode())
 p.readline()
