@@ -125,10 +125,7 @@ from Crypto.Util.number import bytes_to_long
 from pkcs1 import emsa_pkcs1_v15
 import json
 
-HOST = 'socket.cryptohack.org'
-PORT = 13391
-
-p = remote(HOST, PORT)
+p = remote("socket.cryptohack.org", 13391)
 print(p.recvline().decode())
 
 data = {"option": "get_signature"}
