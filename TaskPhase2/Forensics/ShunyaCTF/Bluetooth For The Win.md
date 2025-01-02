@@ -23,15 +23,11 @@ Now if we want to see the packets that where captured just from this device we c
 
 Now looking at the packets sent from this device with filter ``bluetooth.src`` we understood that he has changed the volume to many times bringing it down and up while pausing to many times to count. Looking further at the challenge description we can understand the **FIDGET** These guys are referencing the use of him turning up and down the volume, pausing the pods on and off. 
 
-![image](https://github.com/user-attachments/assets/3915fc00-fc9d-4dec-9515-0bbbdab8755c)
+![image](https://github.com/user-attachments/assets/9b63af17-9074-4db9-82d2-6b1ae4a7088d)
 
 Now from this we can assume that ->
 
-```
-Increase in volume -> - (increasing volume = longer signals)
-Decrease in volume -> . (decreasing volume = shorter signals)
-Pausing and Unpausing the audio -> whitespace
-```
+**Increase in volume -> - (increasing volume = longer signals), Decrease in volume -> . (decreasing volume = shorter signals), Pausing and Unpausing the audio -> whitespace**
 
 Hence interpreting this we get ``-... .-.. . ..--.- ..-. - .--``
 
