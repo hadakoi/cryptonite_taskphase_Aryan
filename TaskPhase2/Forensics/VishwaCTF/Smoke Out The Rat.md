@@ -20,8 +20,6 @@ Now firstly opening the file in notepad and trying to search for the phone numbe
 
 Hence to view it in a readable format we can use the ``mysqlbinlog`` utility.
 
-
-
 ```shell
 hadakoi@Laptop:~/ctfsolve$ mysqlbinlog DBlog-bin.000007
 /*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;
@@ -57,9 +55,14 @@ Now we can examine this text file easily ->
 
 From the description we know the outsider had ended up dropping the entire database meaning it removed all the contents etc the only way to do this normally is by using the ``DROP`` command so lets look for that where we find one where he drops the entire database for the bank and the log ends there. We can also see that he had tried testing this before by doing ``drop database test``
 
+![image](https://github.com/user-attachments/assets/54936a0a-843d-43a1-be5e-3a55826be182)
+
 From this we can see this above it multiple hexa strings that come after a text ``BINLOG '`` with what seems to be logs and the time it was done at.  This line marks the beginning of the binary log event essentially recording changes being made.
 
 when decoding each of these from ``base64`` we see that the first 2 logs above it are useless and show us nothing however the third one ->
+
+![image](https://github.com/user-attachments/assets/6257115f-6435-4b5d-b3a9-b979df83fb67)
+
 
 ```shell
 SET TIMESTAMP=1709028089/*!*/;
