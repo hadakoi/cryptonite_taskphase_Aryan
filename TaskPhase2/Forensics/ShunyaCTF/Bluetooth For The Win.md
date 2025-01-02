@@ -17,11 +17,13 @@ So we first open the bluetooth devices section on wireshark when looking at the 
 
 Upon doing this we can see some intresting stuff seems like the bro had nothingphone earpods in (they are garbo just get airpods smh).
 
+![image](https://github.com/user-attachments/assets/28bfb441-8acd-41dc-8fca-5c00affc638b)
 
 Now if we want to see the packets that where captured just from this device we can set a filter for it. 
 
+Now looking at the packets sent from this device with filter ``bluetooth.src`` we understood that he has changed the volume to many times bringing it down and up while pausing to many times to count. Looking further at the challenge description we can understand the **FIDGET** These guys are referencing the use of him turning up and down the volume, pausing the pods on and off. 
 
-Now looking at the packets sent we understood that he has changed the volume to many times bringing it down and up while pausing to many times to count. Looking further at the challenge description we can understand the **FIDGET** These guys are referencing the use of him turning up and down the volume, pausing the pods on and off. 
+![image](https://github.com/user-attachments/assets/3915fc00-fc9d-4dec-9515-0bbbdab8755c)
 
 Now from this we can assume that ->
 
