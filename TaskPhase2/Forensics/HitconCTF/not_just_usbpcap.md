@@ -22,7 +22,7 @@ However upon putting our ``.csv`` file into this [USB Mouse Pcap Visualizer](htt
 
 Hence this is a bust now moving on to bruteforcing more usb devices the very next device ``usb.device_address  == 10`` seems to provide us with a keyboard of sorts.
 
-![image](https://github.com/user-attachments/assets/616b8a81-b6ba-4c8b-9e65-3a573beb309a)
+![image](https://github.com/user-attachments/assets/1823a97f-cd83-4133-842e-c4d72301e7d7)
 
 [USB-keyboard-Parser](https://github.com/TeamRocketIst/ctf-usb-keyboard-parser/tree/master) Using this i can extract and find out what was typed:
 
