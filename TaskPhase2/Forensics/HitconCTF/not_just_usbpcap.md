@@ -10,7 +10,7 @@ At first we look at the USB devices present here, where I bruteforced for device
 
 I find the first address of 9 being valid and it is a mouse. Now these inputs seem to be displaying mouse strokes for an optical Mouse.
 
-
+![image](https://github.com/user-attachments/assets/bc26cea9-5322-4597-b632-0091696bd064)
 
 Now i want to try and extract these keystrokes to see how they work for which I use this github repo [mouse-pcap-visualizer](https://github.com/WangYihang/USB-Mouse-Pcap-Visualizer)
 
@@ -18,11 +18,11 @@ Now i want to try and extract these keystrokes to see how they work for which I 
 
 However upon putting our ``.csv`` file into this [USB Mouse Pcap Visualizer](https://usb-mouse-pcap-visualizer.vercel.app/) all we get back is a bunch of gibberish ;-; so it would seem
 
-Picture2
+![image](https://github.com/user-attachments/assets/50f25131-4ed5-4f2b-9613-6773d8877bcb)
 
 Hence this is a bust now moving on to bruteforcing more usb devices the very next device ``usb.device_address  == 10`` seems to provide us with a keyboard of sorts.
 
-Picture3
+![image](https://github.com/user-attachments/assets/616b8a81-b6ba-4c8b-9e65-3a573beb309a)
 
 [USB-keyboard-Parser](https://github.com/TeamRocketIst/ctf-usb-keyboard-parser/tree/master) Using this i can extract and find out what was typed:
 
@@ -183,18 +183,21 @@ So now we have the flag format. however we have gone through most of the usb dev
 
 We end up seeing the Pixel buds A series. 
 
-Picture4
+![image](https://github.com/user-attachments/assets/863b1c7e-3fb7-4b40-99ae-3d7c8f45f17a)
 
 Over here I sort it by Length where i can see that it is withinfact being sent in audio layers.
 
-
-Picture5
+![image](https://github.com/user-attachments/assets/9f0d477a-fd50-43f5-9ff2-7d1f2a35d183)
 
 From here i had to consult another writeup that gave me a fair idea on what to do: [writeup](https://github.com/10secTW/ctf-writeup/blob/0c9f9cdfb597d34133f7e82715d8be44a6eff119/2023/HITCON%20CTF/Not%20Just%20usbpcap/Not%20Just%20usbpcap.md) and another writeup [writeup2](https://zysgmzb.club/index.php/archives/271)
 
 Over here we can find something called the ``Setconfig`` packet where we see that the audio is MPEF AAC LC 48000 Hz 2 channels format.
 
+![image](https://github.com/user-attachments/assets/fbd820ee-9cc7-4194-9eb9-3824e503ca70)
+
 Now upon looking at the starting packet header we see that it is ``47FC000B08C800300FFFF91`` followed by AAC audio data in the LATM format. Now these must be converted to ADTS headers ``FFF94C8052DFFC`` for playback.
+
+![image](https://github.com/user-attachments/assets/54faaf6a-0959-42f4-9e18-ca37ea418a00)
 
 As such we can first extract the LATM data
 
