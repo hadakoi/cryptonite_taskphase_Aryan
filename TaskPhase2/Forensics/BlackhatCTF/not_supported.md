@@ -41,6 +41,7 @@ As such we just make a textfile of all the strings of ``.dmp`` and then open it 
 
 Which we are able to find.
 
+![image](https://github.com/user-attachments/assets/c016d410-3f91-47c6-9cc0-e6184615b3f0)
 
 ## Flag
 
