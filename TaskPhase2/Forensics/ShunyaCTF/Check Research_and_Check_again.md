@@ -40,9 +40,11 @@ Hence we can use a hex editor allowing for modification of the file's raw data a
 
 Upon opening it and trying to a view an output we can see serveral errors D: with our known error of the **IDHR** chunk hence we can just go about fixing it, first changing the value in the IDHR chunk to no interlacing. 
 
+![image](https://github.com/user-attachments/assets/58b9077b-e657-4e01-9630-d1f04b314744)
 
 After that we move onto the CRC mismatches the file shows.. It is known as **cyclic redundancy check** it uses a calculated checksum to see if the file's data matches the stored checksum (every png image has a checksum for each of its chunks). If it is different then the file is corrupted. 
 
+<img width="1280" alt="image" src="https://github.com/user-attachments/assets/ae2fadb1-ef44-40d5-9bda-b1a3158711ce" />
 
 Hence we already can see what to change these to so we make the changes to the hex values. 
 
