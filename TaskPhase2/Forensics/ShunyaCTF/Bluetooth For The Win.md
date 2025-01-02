@@ -25,7 +25,7 @@ Now looking at the packets sent from this device with filter ``bluetooth.src`` w
 
 ![image](https://github.com/user-attachments/assets/9b63af17-9074-4db9-82d2-6b1ae4a7088d)
 
-Now from this we can assume that ->
+Now from this we can assume that we are doing something in morse ->
 
 **Increase in volume -> - (increasing volume = longer signals), Decrease in volume -> . (decreasing volume = shorter signals), Pausing and Unpausing the audio -> whitespace**
 
