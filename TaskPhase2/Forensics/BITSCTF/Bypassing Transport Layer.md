@@ -15,8 +15,12 @@ At the same time it was logging the keys (likely the TLS session keys used to en
 
 So upon looking at it at first glance in wireshark it is very useless as it does not provide any good info. This is because it was probably encrypted so to encrypt it we must go to **Edit > Preferences > Protocols > TLS -> (pre)-master-secret-log-file.** . Now using the keys file we found on the ``desktop`` we can reveal the unecrypted packets.
 
+![image](https://github.com/user-attachments/assets/ee462fd1-82fd-4c33-af2c-0b652d6ae780)
+
+
 After doing this we see a bunch of HTTP2 packets. So lets export the data as HTTP2 packets and check them out.
 
+![image](https://github.com/user-attachments/assets/22f730c3-d9f4-4c8f-acd1-5a06771e63fe)
 
 Now from here we can use the strings and grep command to look for the flag
 
