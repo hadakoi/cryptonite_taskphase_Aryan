@@ -13,6 +13,8 @@ Now looking in desktop we see they have provided us with a ``keylog.pcapng`` fil
 
 Now opening this in wireshark we see something intresting within the information ``URB_INTERRUPT``
 
+![image](https://github.com/user-attachments/assets/a4beb354-20b8-46ab-9129-c1a616752f09)
+
 Looking at the cases where it is going from host to destination we see that it always has a length of 35.
 
 It also is transferring **HID** data sent from our keyboard. Now essentially we only have to look at these things.
