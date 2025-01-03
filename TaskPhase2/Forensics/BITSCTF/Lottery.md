@@ -9,6 +9,8 @@ Considering the name of the challenge we see that it is based on the CVE that we
 
 Using virusTotal we realise the file is packed using ``PyInstaller``
 
+![image](https://github.com/user-attachments/assets/5d59238c-1bff-4c79-8291-292b5348550e)
+
 We first use [pyinstxtractor](``https://github.com/extremecoders-re/pyinstxtractor``) to extract the contents of this Pyinstaller generated file
 
 After extracting the ``.pyc`` file we can use [uncompyle6](``https://github.com/rocky/python-uncompyle6/``) to get our readable python source file back.
@@ -62,12 +64,15 @@ Now our job would be just to find the key. we know it was logged earlier in a te
 
 Now searching here we find a 32 bit file with the hex ``FBF60E95C2F3C96F36E1195538E34E30CF1A290F1C14CD5E699E476A3BE2BC5E``.
 
-Now we have the ``IV = urfuckedmogambro`` and the ``key = FBF60E95C2F3C96F36E1195538E34E30CF1A290F1C14CD5E699E476A3BE2BC5E`` Now we can just use a online decrypter such as [**cyberchef**](https://gchq.github.io/CyberChef/#recipe=AES_Decrypt(%7B'option':'Hex','string':'FBF60E95C2F3C96F36E1195538E34E30CF1A290F1C14CD5E699E476A3BE2BC5E'%7D,%7B'option':'UTF8','string':'urfuckedmogambro'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)Render_Image('Raw')&oeol=FF) where we can input it directly.
+![image](https://github.com/user-attachments/assets/83a48772-34ae-41b2-ae1d-c6554ccfe99e)
 
+Now we have the ``IV = urfuckedmogambro`` and the ``key = FBF60E95C2F3C96F36E1195538E34E30CF1A290F1C14CD5E699E476A3BE2BC5E`` Now we can just use a online decrypter such as [**cyberchef**](https://gchq.github.io/CyberChef/#recipe=AES_Decrypt(%7B'option':'Hex','string':'FBF60E95C2F3C96F36E1195538E34E30CF1A290F1C14CD5E699E476A3BE2BC5E'%7D,%7B'option':'UTF8','string':'urfuckedmogambro'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)Render_Image('Raw')&oeol=FF) where we can input it directly.
 
 We can also have an option to render the image as it is which we choose to do so.
 
 Hence we recieve the flag.
+
+![image](https://github.com/user-attachments/assets/9c232c87-adb1-44c4-b9af-cdbc52a66519)
 
 ## Flag
 
