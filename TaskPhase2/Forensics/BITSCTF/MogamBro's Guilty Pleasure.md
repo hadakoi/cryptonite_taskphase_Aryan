@@ -12,6 +12,7 @@ Back in the emails folder we ended up seeing this email as well
 
 Opening it we see a large amount of text 
 
+![image](https://github.com/user-attachments/assets/f8b3d5e6-f9a3-4b29-bc65-d8de634572c0)
 
 ```
 Dear Friend , We know you are interested in receiving
@@ -59,8 +60,7 @@ We can also confirm this by just searching up any of the bill xxxx, Title x, Sec
 
 Which essentially leads us to understand that there is a message hidden within this text.
 
-Now upon searching the first bill it seems to quite literally give us the solver?! which is essentially asking us to decode the spam hence we use this decoder [``spammimic``](https://www.spammimic.com/decode.shtml)
-
+From here we understand this is basically spam is essentially asking us to decode the spam hence we use this decoder [``spammimic``](https://www.spammimic.com/decode.shtml)
 
 hence returning us our flag ``BITSCTF{sp4m_2_ph1sh_U}�``
 
