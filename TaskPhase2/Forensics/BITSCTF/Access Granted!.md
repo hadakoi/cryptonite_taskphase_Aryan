@@ -34,6 +34,8 @@ PS C:\Users\arygu\Aryan's files\Forensics\summer\summer\mogambro>
 
 From here we can see the password for ``MogamBro`` under nthash ``8a320467c7c22e321c3173e757194bb3`` which also seems to be the administrator password. Now to crack nthash we can use a password cracker like [CrackStation](https://crackstation.net/).
 
+![image](https://github.com/user-attachments/assets/3adbf394-cc01-455a-a4cb-9984aae0bb29)
+
 To which we get the password ``adolfhitlerrulesallthepeople`` which will be our flag encased in the **BITSCTF{}**
 
 ## Flag
