@@ -73,7 +73,7 @@ This was obviously some function at work. So we have the points of the function'
 
 normal interpolation was slow, thus to speed it up, looked for faster interpolation algorithms online
 
-I found quicker ways to solve this specific function using ``fast-interpolation`` algorithim found on stack overflow that uses a tree to solve this function.
+I found quicker ways to solve this specific function using ``fast-interpolation`` algorithim found on stack overflow and github that uses a tree to solve this function.
 
 I stole that and tweaked it 
 
@@ -149,6 +149,8 @@ Running this script we get this:
 This question should not exist ;-;
 
 (I hate meths)
+
+Reference Used : [FastSolve](https://github.com/PetePriority/picoctf-2024/blob/main/cryptography/flag_printer/solve_fast.ipynb)
 
 ## Flag
 
