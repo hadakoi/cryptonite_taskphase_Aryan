@@ -25,7 +25,7 @@ Now essentially what they want us to do is change B to something that causes the
 
 now the formula for shared_secret is calculated in this case by Alice using her private key ``B^a % p`` 
 
-If we make B, 1 then it will just be ``1 % P`` and will be 1, hence we know the shared secret is a the private key.
+If we make B, 1 then it will just be ``1 % P`` and will be 1, hence we know the shared secret.
 
 We then recieve the IV and the Flag from alice and because we know what the shared secret is we can decrypt the flag using the previous decode script they had given us :D
 
